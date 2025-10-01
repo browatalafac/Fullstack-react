@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function First() {
   return (
     <section id="first">
     <div className="nav-left">
-        <a href="index.html">Inicio</a>
-        <a href="catalog.html">Catálogo</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="about.html">Sobre nosotros</a>
+        <Link to ="/Home">Inicio</Link>
+        <Link to ="/Catalog">Catálogo</Link>
+        <Link to ="/Blogs">Blogs</Link>
+        <Link to ="/About">Sobre nosotros</Link>
     </div>
     <form id="search-bar">
         <input type="text" placeholder="Buscar..." />

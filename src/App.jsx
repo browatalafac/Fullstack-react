@@ -8,15 +8,18 @@ import Blogs from './components/pages/Blogs'
 function App() {
   return (
     <BrowserRouter>
-    <Link to="/">Inicio</Link>
-    <Link to="/Catalog">Catalogo</Link>
-    <Link to="/Blogs">Blogs</Link>
-    <Link to="/About">Sobre nosotros</Link>
+      <nav>
+        <Link to="/">Inicio</Link>
+        <Link to="/catalog">Catálogo</Link>
+        <Link to="/blogs">Blogs</Link>
+        <Link to="/about">Sobre nosotros</Link>
+      </nav>
+
       <Routes>
-        <Route path='/' Component={Home}/>
-        <Route path='/catalog' Component={Catalog}/>
-        <Route path='/blogs' Component={Blogs}/>
-        <Route path='/about' Component={About}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/catalog' element={<Catalog />} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </BrowserRouter>
   )
