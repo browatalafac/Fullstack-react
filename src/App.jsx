@@ -11,7 +11,7 @@ function App() {
     <Link to="/">Inicio</Link>
     <Link to="/Catalog">Catalogo</Link>
     <Link to="/Blogs">Blogs</Link>
-    <Link to="/About">Sobre nosotros</Link>
+    <Link to="/AAAAAAA">Sobre nosotros</Link>
       <Routes>
         <Route path='/' Component={Home}/>
         <Route path='/catalog' Component={Catalog}/>
