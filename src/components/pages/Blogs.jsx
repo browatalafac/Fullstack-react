@@ -1,8 +1,15 @@
 import React from 'react';
+import TopBar from '../organisms/Blogs/TopBar';
+import First from '../organisms/Blogs/First';
+import Footer from '../organisms/Blogs/Footer';
 
 const Blogs = () => {
   return (
-    <div>Blogs</div>
+    <>
+      <TopBar/>
+      <First/>
+      <Footer/>
+    </>
   );
 };
 
