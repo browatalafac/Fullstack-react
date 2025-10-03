@@ -13,7 +13,6 @@ export default function Catalog() {
       <Header/>
       <Container/>
       <Footer/>
-
     </>
   )
 }

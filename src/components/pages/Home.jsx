@@ -1,3 +1,4 @@
+// src/.../Home.jsx
 import React from 'react'
 import TopBar from '../organisms/Inicio/TopBar'
 import First from '../organisms/Inicio/First'
@@ -8,12 +9,12 @@ import "../organisms/Inicio/Inicio.css";
 
 export default function Home() {
   return (
-    <>
-        <TopBar/>
-        <First/>
-        <Second/>
-        <Third/>
-        <Footer/>
-    </>
+    <section className="inicio-root">
+      <TopBar/>
+      <First/>
+      <Second/>
+      <Third/>
+      <Footer/>
+    </section>
   )
 }
