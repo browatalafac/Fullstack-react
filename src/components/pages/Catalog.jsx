@@ -3,7 +3,8 @@ import TopBar from '../organisms/Catalogo/TopBar'
 import First from '../organisms/Catalogo/First'
 import Header from '../organisms/Catalogo/Header'
 import Container from '../organisms/Catalogo/Container'
-
+import Footer from '../organisms/Catalogo/Footer'
+import "../organisms/Catalogo/Catalogo.css";
 export default function Catalog() {
   return (
     <>
@@ -11,6 +12,8 @@ export default function Catalog() {
       <First/>
       <Header/>
       <Container/>
+      <Footer/>
+
     </>
   )
 }
