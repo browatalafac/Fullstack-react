@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function First() {
   return (
     <section id="first">
-        <div class="nav-left">
+        <div className="nav-left">
             
             <Link to ="/Home">Inicio</Link>
             <Link to ="/Catalog">Catálogo</Link>
@@ -15,7 +15,7 @@ export default function First() {
             <input type="text" placeholder="Buscar..." />
             <button type="submit">🔍</button>
         </form>
-        <div class="nav-right">
+        <div className="nav-right">
             <Link to="login.html">Inicio de sesión</Link>
             <Link to="car.html">🛒 Carrito</Link>
         </div>
