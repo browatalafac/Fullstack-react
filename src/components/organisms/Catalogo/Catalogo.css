@@ -1,36 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-* {
+.catalog-root * {
     margin: 0;
     font-family: "Lato", sans-serif;
     font-size: large;
 }
 
-.nav-left .logo {
+.catalog-root .nav-left .logo {
     height: 50px;     
     width: auto;       
     vertical-align: middle;
 }
 
-
-
-a {
+.catalog-root a {
     text-decoration: none;
     color: #5D4037;
 }
 
-a:hover {
+.catalog-root a:hover {
     color: #8B4513;
 }
 
-body {
+.catalog-root body {
     background-color: #FFF5E1;
     color: #5D4037;
     line-height: 1.6;
 }
 
-#top-bar {
+.catalog-root #top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,18 +38,18 @@ body {
     height: 2.5vh;
 }
 
-#top-bar .social-icons a {
+.catalog-root #top-bar .social-icons a {
     margin-left: 1rem;
     color: #5D4037;
     font-size: 1.2rem;
     text-decoration: none;
 }
 
-#top-bar .social-icons a:hover {
+.catalog-root #top-bar .social-icons a:hover {
     color: #8B4513;
 }
 
-#first {
+.catalog-root #first {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,25 +60,26 @@ body {
     border-bottom: 2px solid #f4a8b7;
 }
 
-.nav-left, .nav-right {
+.catalog-root .nav-left,
+.catalog-root .nav-right {
     display: flex;
     align-items: center;
     column-gap: 2rem;
 }
 
-#search-bar {
+.catalog-root #search-bar {
     display: flex;
     align-items: center;
 }
 
-#search-bar input {
+.catalog-root #search-bar input {
     padding: 0.3rem 0.5rem;
     border-radius: 8px;
     border: 1px solid #ccc;
     outline: none;
 }
 
-#search-bar button {
+.catalog-root #search-bar button {
     margin-left: 0.3rem;
     padding: 0.3rem 0.6rem;
     border-radius: 8px;
@@ -88,51 +87,51 @@ body {
     background-color: #e99fac;
     color: white;
     cursor: pointer;
-    transition:0.3s ease, transform 0.2s;
+    transition: 0.3s ease, transform 0.2s;
 }
 
-#search-bar button:hover {
+.catalog-root #search-bar button:hover {
     background-color: #c4806b;
     transform: scale(1.05);
 }
 
-header {
+.catalog-root header {
     margin-top: -0.3px;
     text-align: center;
     background: #f4a8b7;
     padding: 2rem;
 }
 
-header h1 {
+.catalog-root header h1 {
     margin: 0;
     color: #5D4037;
     font-family: "Pacifico", cursive;
     font-size: 32px;
 }
 
-header p {
+.catalog-root header p {
     margin-top: 1rem;
     font-style: italic;
 }
 
-.container {
+.catalog-root .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-.row {
+.catalog-root .row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 2rem;
 }
 
-.row-last {
+.catalog-root .row-last {
     justify-content: center;
 }
 
-.category {
+.catalog-root .category {
     margin-top: 2rem;
     width: 32%;
     display: flex;
@@ -141,14 +140,14 @@ header p {
     margin-bottom: 2rem;
 }
 
-.category-title {
+.catalog-root .category-title {
     font-size: 1.8rem;
     color: #8B4513;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.item {
+.catalog-root .item {
     background: #f4a8b7;
     border-radius: 12px;
     padding: 1rem;
@@ -158,11 +157,11 @@ header p {
     margin-left: 5vh;
 }
 
-.item:hover {
+.catalog-root .item:hover {
     transform: scale(1.05);
 }
 
-.img {
+.catalog-root .img {
     width: 250px;
     height: 250px;
     border-radius: 10px;
@@ -172,36 +171,37 @@ header p {
     background-color: #f8d7da;
 }
 
-.name {
+.catalog-root .name {
     font-weight: 700;
     color: #5D4037;
     margin-bottom: 0.2rem;
 }
 
-.price {
+.catalog-root .price {
     font-weight: 700;
     color: white;
     margin-bottom: 0.5rem;
 }
 
-.img-TC001 { background-image: url('https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg'); }
-.img-TC002 { background-image: url('https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg'); }
-.img-TT001 { background-image: url('https://reposteriaflores.cl/wp-content/uploads/2016/11/maxresdefault.jpg'); }
-.img-TT002 { background-image: url('https://rhenania.cl/wp-content/uploads/2020/12/CIRUELA-MANJAR-BLANCO.jpg'); }
-.img-PI001 { background-image: url('https://www.elinasaiach.com/wp-content/uploads/2022/04/Mousse-Chocolate-3.jpg'); }
-.img-PI002 { background-image: url('https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg'); }
-.img-PSA001 { background-image: url('https://www.lomismoperosano.cl/wp-content/uploads/2022/01/receta-torta-panqueque-naranja.jpg'); }
-.img-PSA002 { background-image: url('https://www.hola.com/horizon/landscape/64c21cd97107-tarta-horno-queso-t.jpg'); }
-.img-PT001 { background-image: url('https://cdn7.kiwilimon.com/recetaimagen/1366/960x640/2229.jpg.jpg'); }
-.img-PT002 { background-image: url('https://jetextramar.com/wp-content/uploads/2021/11/tarta-de-santiago1-empresa-de-alimentos.jpg'); }
-.img-PG001 { background-image: url('https://azucarledesma.com/wp-content/uploads/2024/01/20240131-BrownieLight.jpg'); }
-.img-PG002 { background-image: url('https://levanova.es/wp-content/uploads/2021/07/pansingluten.png'); }
-.img-PV001 { background-image: url('https://luciapaula.com/wp-content/uploads/2023/01/Blog-1970-01-20-125839033.jpg'); }
-.img-PV002 { background-image: url('https://i.blogs.es/8792e6/galletas-avea-tahina-datiles/840_560.jpg'); }
-.img-TE001 { background-image: url('https://i.pinimg.com/originals/aa/a0/4f/aaa04fb61005c9fc6d748dee6eac76f3.jpg'); }
-.img-TE002 { background-image: url('https://i.pinimg.com/474x/3b/bc/bb/3bbcbb826b865e5278f53a5b2661c2e5.jpg'); }
+/* === IMÁGENES === */
+.catalog-root .img-TC001 { background-image: url('https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg'); }
+.catalog-root .img-TC002 { background-image: url('https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg'); }
+.catalog-root .img-TT001 { background-image: url('https://reposteriaflores.cl/wp-content/uploads/2016/11/maxresdefault.jpg'); }
+.catalog-root .img-TT002 { background-image: url('https://rhenania.cl/wp-content/uploads/2020/12/CIRUELA-MANJAR-BLANCO.jpg'); }
+.catalog-root .img-PI001 { background-image: url('https://www.elinasaiach.com/wp-content/uploads/2022/04/Mousse-Chocolate-3.jpg'); }
+.catalog-root .img-PI002 { background-image: url('https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg'); }
+.catalog-root .img-PSA001 { background-image: url('https://www.lomismoperosano.cl/wp-content/uploads/2022/01/receta-torta-panqueque-naranja.jpg'); }
+.catalog-root .img-PSA002 { background-image: url('https://www.hola.com/horizon/landscape/64c21cd97107-tarta-horno-queso-t.jpg'); }
+.catalog-root .img-PT001 { background-image: url('https://cdn7.kiwilimon.com/recetaimagen/1366/960x640/2229.jpg.jpg'); }
+.catalog-root .img-PT002 { background-image: url('https://jetextramar.com/wp-content/uploads/2021/11/tarta-de-santiago1-empresa-de-alimentos.jpg'); }
+.catalog-root .img-PG001 { background-image: url('https://azucarledesma.com/wp-content/uploads/2024/01/20240131-BrownieLight.jpg'); }
+.catalog-root .img-PG002 { background-image: url('https://levanova.es/wp-content/uploads/2021/07/pansingluten.png'); }
+.catalog-root .img-PV001 { background-image: url('https://luciapaula.com/wp-content/uploads/2023/01/Blog-1970-01-20-125839033.jpg'); }
+.catalog-root .img-PV002 { background-image: url('https://i.blogs.es/8792e6/galletas-avea-tahina-datiles/840_560.jpg'); }
+.catalog-root .img-TE001 { background-image: url('https://i.pinimg.com/originals/aa/a0/4f/aaa04fb61005c9fc6d748dee6eac76f3.jpg'); }
+.catalog-root .img-TE002 { background-image: url('https://i.pinimg.com/474x/3b/bc/bb/3bbcbb826b865e5278f53a5b2661c2e5.jpg'); }
 
-.btn {
+.catalog-root .btn {
     padding: 0.4rem 0.8rem;
     border: none;
     border-radius: 25px;
@@ -212,57 +212,59 @@ header p {
     transition: all 0.3s ease;
 }
 
-.btn:hover {
+.catalog-root .btn:hover {
     background: #c4806b;
     transform: scale(1.05);
 }
 
 @media(max-width: 1024px) {
-    .category {
+    .catalog-root .category {
         width: 48%;
     }
     
-    .row-last .category {
+    .catalog-root .row-last .category {
         width: 48%;
     }
 }
 
 @media(max-width: 768px) {
-    .category {
+    .catalog-root .category {
         width: 100%;
     }
     
-    .row-last .category {
+    .catalog-root .row-last .category {
         width: 100%;
     }
     
-    #first {
+    .catalog-root #first {
         flex-direction: column;
         height: auto;
         padding: 1rem;
     }
     
-    .nav-left, .nav-right, #search-bar {
+    .catalog-root .nav-left,
+    .catalog-root .nav-right,
+    .catalog-root #search-bar {
         margin-bottom: 1rem;
     }
 }
 
 @media(max-width: 480px) {
-    .img {
+    .catalog-root .img {
         width: 200px;
         height: 200px;
     }
     
-    .header h1 {
+    .catalog-root .header h1 {
         font-size: 2rem;
     }
     
-    .category-title {
+    .catalog-root .category-title {
         font-size: 1.5rem;
     }
 }
 
-#pie {
+.catalog-root #pie {
     background-color: #FFE0B2;
     color: #5D4037;
     padding: 2rem 1rem 1rem 1rem;
@@ -272,7 +274,7 @@ header p {
     gap: 10rem;
 }
 
-.footer-content {
+.catalog-root .footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -280,44 +282,43 @@ header p {
     padding-bottom: 1rem;
 }
 
-.footer-section {
+.catalog-root .footer-section {
     flex: 1 1 250px;
     display: flex;
     flex-direction: column;
     row-gap: 0.5rem;
 }
 
-.footer-section h3 {
-    font-family: "Lato", cursive;;
+.catalog-root .footer-section h3 {
+    font-family: "Lato", cursive;
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     color: #8B4513;
 }
 
-.footer-section a {
+.catalog-root .footer-section a {
     color: #5D4037;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
+.catalog-root .footer-section a:hover {
     color: #BF360C;
 }
 
-.footer-bottom {
+.catalog-root .footer-bottom {
     text-align: center;
     border-top: 1px solid #d7b48c;
     padding-top: 1rem;
     font-size: 0.9rem;
 }
 
-
-#toast {
+.catalog-root #toast {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #e99fac; /* color acorde con tu diseño */
+    background-color: #e99fac;
     color: white;
     padding: 1rem 1.5rem;
     border-radius: 10px;
@@ -329,7 +330,7 @@ header p {
     z-index: 1000;
 }
 
-#toast.show {
+.catalog-root #toast.show {
     opacity: 1;
     transform: translateY(0);
 }

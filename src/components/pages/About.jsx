@@ -8,10 +8,12 @@ import "../organisms/About/About.css";
 export default function About() {
   return (
     <>
+        <section className="about-root">
         <TopBar/>
         <First/>
         <Second/>
         <Footer/>
+        </section>
     </>
   )
 }

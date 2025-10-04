@@ -8,11 +8,13 @@ import "../organisms/Catalogo/Catalogo.css";
 export default function Catalog() {
   return (
     <>
+      <section className="catalog-root">
       <TopBar/>
       <First/>
       <Header/>
       <Container/>
       <Footer/>
+      </section>
     </>
   )
 }
