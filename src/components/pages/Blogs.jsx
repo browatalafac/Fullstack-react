@@ -1,10 +1,11 @@
 import React from 'react';
-import TopBar from '../organisms/Blogs/TopBar';
-import First from '../organisms/Blogs/First';
-import Footer from '../organisms/Blogs/Footer';
+
 import "../organisms/Blogs/Blogs.css";
 import Header from '../organisms/Blogs/Header';
 import Main from '../organisms/Blogs/Main';
+import First from '../organisms/First';
+import Footer from '../organisms/Footer';
+import TopBar from '../organisms/TopBar';
 
 const Blogs = () => {
   return (

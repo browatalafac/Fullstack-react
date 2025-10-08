@@ -9,10 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <nav>
-        <Link to="/">Inicio</Link>
-        <Link to="/catalog">Catálogo</Link>
-        <Link to="/blogs">Blogs</Link>
-        <Link to="/about">Sobre nosotros</Link>
+      
       </nav>
 
       <Routes>

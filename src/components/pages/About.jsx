@@ -1,9 +1,10 @@
 import React from 'react'
-import TopBar from '../organisms/About/TopBar'
-import First from '../organisms/About/First'
+
 import Second from '../organisms/About/Second'
-import Footer from '../organisms/About/Footer'
 import "../organisms/About/About.css";
+import First from '../organisms/First';
+import Footer from '../organisms/Footer';
+import TopBar from '../organisms/TopBar';
 
 export default function About() {
   return (

@@ -5,7 +5,7 @@ export default function First() {
   return (
     <section id="first">
       <div className="nav-left">
-        <Link to="/Home">Inicio</Link>
+        <Link to="/">Inicio</Link>
         <Link to="/Catalog">Catálogo</Link>
         <Link to="/Blogs">Blogs</Link>
         <Link to="/About">Sobre nosotros</Link>
