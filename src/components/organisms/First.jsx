@@ -15,8 +15,8 @@ export default function First() {
         <button type="submit">🔍</button>
       </form>
       <div className="nav-right">
-        <Link to="/Login">Inicio de sesión</Link>
-        <Link to="/Car">🛒 Carrito</Link>
+        <Link to="/login">Inicio de sesión</Link>
+        <Link to="/cart">🛒 Carrito</Link>
       </div>
     </section>
   );

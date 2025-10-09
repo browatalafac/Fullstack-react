@@ -4,6 +4,8 @@ import Home from './components/pages/Home'
 import About from './components/pages/About'
 import Catalog from './components/pages/Catalog'
 import Blogs from './components/pages/Blogs'
+import Login from './components/pages/Login'
+import Cart from './components/pages/Cart'
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/catalog' element={<Catalog />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/about' element={<About />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
     </BrowserRouter>
   )
