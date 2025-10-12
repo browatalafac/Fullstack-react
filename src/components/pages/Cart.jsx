@@ -33,32 +33,34 @@ export default function Cart() {
 
   return (
     <>
-      <TopBar/>
-      <First/>
-      <CartHeader />
-      <main id="cart-container">
-        <section className="cart-items">
-          {products.length === 0 ? (
-            <p>Tu carrito está vacío</p>
-          ) : (
-            products.map((p) => (
-              <CartItem
-                key={p.code}
-                product={p}
-                onRemove={() => handleRemove(p.code)}
-              />
-            ))
-          )}
-        </section>
+      <div className="car-root">
+        <TopBar/>
+        <First/>
+        <CartHeader />
+        <main id="cart-container">
+          <section className="cart-items">
+            {products.length === 0 ? (
+              <p>Tu carrito está vacío</p>
+            ) : (
+              products.map((p) => (
+                <CartItem
+                  key={p.code}
+                  product={p}
+                  onRemove={() => handleRemove(p.code)}
+                />
+              ))
+            )}
+          </section>
 
-        <CartSummary
-          subtotal={subtotal}
-          shipping={shipping}
-          total={total}
-          onClearCart={handleClearCart}
-        />
-      </main>
-      <Footer/>
+          <CartSummary
+            subtotal={subtotal}
+            shipping={shipping}
+            total={total}
+            onClearCart={handleClearCart}
+          />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
