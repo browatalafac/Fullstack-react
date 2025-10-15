@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.profile-root * {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    font-size: large;
+}
+
+.profile-root .card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;      
+  gap: 15rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+
+.profile-root .nav-left .logo {
+    height: 50px;     
+    width: auto;       
+    vertical-align: middle;
+}
+
+.profile-root h1 {
+    font-family: "Lato", cursive;
+}
+
+.profile-root {
+    background-color: #FFF5E1;
+}
+
+.profile-root #top-bar {
+    background-color: #FFF5E1;
+    color: #5D4037;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 5vw;
+    font-size: 1rem;
+}
+
+.profile-root #top-bar .social-icons a {
+    color: #5D4037;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.profile-root #top-bar .social-icons a:hover {
+    color: #BF360C;
+}
+
+.profile-root #first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5vw;
+    background-color: #f8c8dc;
+    height: 2vh;
+    border-top: 2px solid #f4a8b7;
+    border-bottom: 2px solid #f4a8b7;
+}
+
+.profile-root .nav-left, .profile-root .nav-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-root #search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.profile-root #search-bar input {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.profile-root #search-bar button {
+    margin-left: 0.3rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #e99fac;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.2s;
+}
+
+.profile-root #search-bar button:hover {
+    background-color: #c4806b;
+    transform: scale(1.05);
+}
+
+.profile-root a {
+    text-decoration: none;
+    color: #5D4037;
+}
+
+.profile-root #first > a {
+    color: #000000;
+}
+
+.profile-root a:hover {
+    color: #8B4513;
+}
+
+
+.profile-root .card1 {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #f4a8b7;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 0;
+  margin-top: 95px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 1.5rem;
+  margin-left: 40px;
+}
+
+.profile-root .card1 .photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #f8c8dc;
+  object-fit: cover;
+}
+
+.profile-root .card1 .info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-root .card1 .label {
+  font-weight: bold;
+  color: #8B4513;
+  margin-right: 0.3rem;
+}
+
+.profile-root .changeInfo {
+  background-color: #fff;
+  border: 2px solid #f4a8b7;
+  border-radius: 12px;
+  padding: 1.5rem 1.2rem;
+  margin: 0;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-right: 40px;
+}
+
+.profile-root .changeInfo .row {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-root .changeInfo label {
+  font-weight: bold;
+  color: #8B4513;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.profile-root .changeInfo input {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-size: 1rem;
+}
+
+.profile-root .changeInfo input:focus {
+  border-color: #f4a8b7;
+  box-shadow: 0 0 5px rgba(244, 168, 183, 0.5);
+}
+
+
+
+
+
+.profile-root #pie {
+    background-color: #FFE0B2;
+    color: #5D4037;
+    padding: 2rem 1rem 1rem 1rem;
+    margin-top: 3rem;
+    border-top: 2px solid #d7b48c;
+    gap: 10rem;
+}
+
+.profile-root .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.profile-root .footer-section {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.profile-root .footer-section h3 {
+    font-family: "Lato", cursive;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #8B4513;
+}
+
+.profile-root .footer-section a {
+    color: #5D4037;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.profile-root .footer-section a:hover {
+    color: #BF360C;
+}
+
+.profile-root .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #d7b48c;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+

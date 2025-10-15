@@ -6,6 +6,7 @@ import Catalog from './components/pages/Catalog'
 import Blogs from './components/pages/Blogs'
 import Login from './components/pages/Login'
 import Cart from './components/pages/Cart'
+import Profile from './components/pages/Profile'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='profile' element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
   )
