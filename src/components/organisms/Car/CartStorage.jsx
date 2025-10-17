@@ -10,8 +10,9 @@ export default function CartStorage() {
     setProducts(savedProducts);
   }, []);
 
-  const removeProduct = (code) => {
-    const updatedProducts = products.filter((p) => p.code !== code);
+  
+  const removeProduct = (indexToRemove) => {
+    const updatedProducts = products.filter((_, index) => index !== indexToRemove);
     setProducts(updatedProducts);
     localStorage.setItem("products", JSON.stringify(updatedProducts));
   };
@@ -29,11 +30,11 @@ export default function CartStorage() {
     <div className="cart-container">
       <div className="cart-items">
         {products.length ? (
-          products.map((p) => (
+          products.map((p, index) => (
             <CartItem
-              key={p.code}
+              key={`${p.code}-${index}`}  
               product={p}
-              removeProduct={removeProduct}
+              removeProduct={() => removeProduct(index)}  
             />
           ))
         ) : (
