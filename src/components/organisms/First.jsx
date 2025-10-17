@@ -16,7 +16,8 @@ export default function First() {
       </form>
       <div className="nav-right">
         <Link to="/profile">Perfil</Link>
-        <Link to="/login">Inicio de sesión</Link>
+         <Link to="/loginTrue">Iniciar sesión</Link>
+        <Link to="/login">Crear Cuenta</Link>
         <Link to="/cart">🛒 Carrito</Link>
       </div>
     </section>

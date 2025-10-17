@@ -7,6 +7,7 @@ import Blogs from './components/pages/Blogs'
 import Login from './components/pages/Login'
 import Cart from './components/pages/Cart'
 import Profile from './components/pages/Profile'
+import LoginTrue from './components/pages/LoginTrue'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/loginTrue' element={<LoginTrue />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='profile' element={<Profile/>}/>
       </Routes>
