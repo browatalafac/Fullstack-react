@@ -18,9 +18,8 @@ export default function FormularioLogin() {
       return;
     }
 
-    // Si todo está correcto
     setErrores("");
-    alert("Inicio de sesión exitoso ✅");
+    alert("Inicio de sesión exitoso");
   };
 
   const handleReset = () => {
