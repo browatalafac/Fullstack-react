@@ -54,7 +54,7 @@
     color: #8B4513;
 }
 
-/* Formulario */
+
 .login-root form {
     width: 70vw;
     background-color: #ffffff;
@@ -104,7 +104,6 @@
     outline: none;
 }
 
-/* Botones */
 .login-root button.btn {
     width: calc(50% - 1rem);
     height: 2.5rem;
@@ -134,7 +133,7 @@
     background-color: #f4a8b7;
 }
 
-/* Footer */
+
 .login-root #pie {
     background-color: #FFE0B2;
     color: #5D4037;
@@ -185,7 +184,12 @@
     font-size: 0.9rem;
 }
 
-/* Responsive */
+.error {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+
 @media (max-width: 768px) {
     .login-root form {
         width: 90vw;
