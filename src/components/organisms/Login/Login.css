@@ -203,4 +203,27 @@
     .login-root button.btn {
         width: 100%;
     }
+    
+    .login-root .you-have {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #5D4037;
+    font-weight: 500;
+    }
+
+    .login-root .you-have a {
+    color: #7a3d11;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.3rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    .login-root .you-have a:hover {
+    color: #BF360C;
+    text-decoration: underline;
+    }
+
+    
 }

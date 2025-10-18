@@ -189,4 +189,25 @@
     .loginTrue-root button.btn {
         width: 100%;
     }
+
+    .loginTrue-root .you-dont-have {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #5D4037;
+    font-weight: 500;
+    }
+
+    .loginTrue-root .you-dont-have a {
+    color: #8B4513;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.3rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    .loginTrue-root .you-dont-have a:hover {
+    color: #BF360C;
+    text-decoration: underline;
+    }
 }
