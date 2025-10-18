@@ -1,18 +1,16 @@
 import React from 'react';
-import TopBar from '../organisms/TopBar';
-import First from '../organisms/First';
 import Follow from '../organisms/FollowUp/Follow';
 import Footer from '../organisms/Footer';
 import "../organisms/FollowUp/Follow.css";
+import FirstFollow from '../organisms/FollowUp/FirstFollow';
 
 export default function FollowPage() {
   return (
     <>
-    <div className="follow-root">
-      <TopBar />
-      <First />
+    <div className="followup-root">
+      <FirstFollow/>
       <Follow/>
-      <Footer />
+      <Footer/>
     </div>
     </>
   );
