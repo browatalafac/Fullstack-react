@@ -8,6 +8,7 @@ import Login from './components/pages/Login'
 import Cart from './components/pages/Cart'
 import Profile from './components/pages/Profile'
 import LoginTrue from './components/pages/LoginTrue'
+import FollowPage from './components/pages/FollowPage'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/loginTrue' element={<LoginTrue />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='profile' element={<Profile/>}/>
+        <Route path='/followUp' element={<FollowPage/>}/>
       </Routes>
     </BrowserRouter>
   )

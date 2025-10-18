@@ -176,21 +176,7 @@
   background-color: #ffe6e6;
 }
 
-@media (max-width: 768px) {
-    .loginTrue-root form {
-        width: 90vw;
-        padding: 1.5rem;
-    }
-
-    .loginTrue-root .row {
-        width: 100%;
-    }
-
-    .loginTrue-root button.btn {
-        width: 100%;
-    }
-
-    .loginTrue-root .you-dont-have {
+.loginTrue-root .you-dont-have {
     margin-top: 1.5rem;
     text-align: center;
     font-size: 1rem;
@@ -209,5 +195,19 @@
     .loginTrue-root .you-dont-have a:hover {
     color: #BF360C;
     text-decoration: underline;
+    }
+
+@media (max-width: 768px) {
+    .loginTrue-root form {
+        width: 90vw;
+        padding: 1.5rem;
+    }
+
+    .loginTrue-root .row {
+        width: 100%;
+    }
+
+    .loginTrue-root button.btn {
+        width: 100%;
     }
 }

@@ -1,0 +1,191 @@
+.profile-root #top-bar {
+    background-color: #FFF5E1;
+    color: #5D4037;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 5vw;
+    font-size: 1rem;
+}
+
+.profile-root #top-bar .social-icons a {
+    color: #5D4037;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.profile-root #top-bar .social-icons a:hover {
+    color: #BF360C;
+}
+
+.profile-root #first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5vw;
+    background-color: #f8c8dc;
+    height: 2vh;
+    border-top: 2px solid #f4a8b7;
+    border-bottom: 2px solid #f4a8b7;
+}
+
+.profile-root #search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.profile-root #search-bar input {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.profile-root #search-bar button {
+    margin-left: 0.3rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #e99fac;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.2s;
+}
+
+.profile-root #search-bar button:hover {
+    background-color: #c4806b;
+    transform: scale(1.05);
+}
+
+.profile-root a {
+    text-decoration: none;
+    color: #5D4037;
+}
+
+.profile-root #first > a {
+    color: #000000;
+}
+
+.profile-root a:hover {
+    color: #8B4513;
+}
+
+.followup-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF5E1;
+    padding: 2rem 0;
+}
+
+.followup-box {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #d7ccc8;
+    text-align: center;
+    width: 70vw;
+    max-width: 600px;
+}
+
+.followup-box h2 {
+    font-family: "Pacifico", cursive;
+    color: #8B4513;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.followup-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.followup-input input {
+    flex: 1;
+    max-width: 400px;
+    height: 2.5rem;
+    padding: 0 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.followup-input input:focus {
+    border: 1.5px solid #8B4513;
+    outline: none;
+}
+
+.btn-search {
+    background-color: #FFC0CB;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    color: #5D4037;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-search:hover {
+    background-color: #f4a8b7;
+}
+
+.follow-root .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    padding-bottom: 1rem;
+    margin-left: 3vh;
+}
+
+.follow-root .footer-section {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.follow-root .footer-section h3 {
+    font-family: "Lato", cursive;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #8B4513;
+}
+
+.follow-root .footer-section a {
+    color: #5D4037;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.follow-root .footer-section a:hover {
+    color: #BF360C;
+}
+
+.follow-root .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #d7b48c;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .followup-input {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .followup-input input {
+        width: 100%;
+    }
+
+    .btn-search {
+        width: 100%;
+    }
+}
