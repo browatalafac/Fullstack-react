@@ -148,47 +148,78 @@
 }
 
 .profile-root .changeInfo {
-  background-color: #fff;
-  border: 2px solid #f4a8b7;
-  border-radius: 12px;
-  padding: 1.5rem 1.2rem;
-  margin: 0;
-  max-width: 450px;
+  background: #ffffff;
+  border: 2px solid #f8c8dc;
+  border-radius: 18px;
+  padding: 2rem 1.8rem;
+  max-width: 480px;
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.6rem;
+  transition: all 0.3s ease;
   margin-right: 40px;
+}
+
+.profile-root .changeInfo-title {
+  font-size: 1.6rem;
+  color: #8b4513;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px solid #f4a8b7;
+  padding-bottom: 0.6rem;
 }
 
 .profile-root .changeInfo .row {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
 }
 
 .profile-root .changeInfo label {
-  font-weight: bold;
+  font-weight: 600;
   color: #8B4513;
   margin-bottom: 0.4rem;
   font-size: 1rem;
 }
 
 .profile-root .changeInfo input {
-  padding: 0.6rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  background-color: #fff8f8;
+  transition: all 0.3s ease;
   font-size: 1rem;
 }
 
 .profile-root .changeInfo input:focus {
   border-color: #f4a8b7;
-  box-shadow: 0 0 5px rgba(244, 168, 183, 0.5);
+  box-shadow: 0 0 6px rgba(244, 168, 183, 0.4);
+  background-color: #fff;
 }
 
+.profile-root .save-btn {
+  background-color: #f4a8b7;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 0.9rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
 
+.profile-root .save-btn:hover {
+  background-color: #e58ca0;
+  transform: scale(1.03);
+}
+
+.profile-root .save-btn:active {
+  transform: scale(0.98);
+}
 
 
 
