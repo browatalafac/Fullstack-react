@@ -18,7 +18,7 @@ export default function Container() {
   const images = {
     TC001: "https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg",
     TC002: "https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg",
-    TT001: "https://reposteriaflores.cl/wp-content/uploads/2016/11/maxresdefault.jpg",
+    TT001: "https://tortamaniaecuador.com/wp-content/uploads/2022/12/Vainilla-con-crema-pequena-300x300.png",
     TT002: "https://rhenania.cl/wp-content/uploads/2020/12/CIRUELA-MANJAR-BLANCO.jpg",
     PI001: "https://www.elinasaiach.com/wp-content/uploads/2022/04/Mousse-Chocolate-3.jpg",
     PI002: "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg",
@@ -37,7 +37,7 @@ export default function Container() {
   return (
     <div className="container">
       {/* Primera fila */}
-      <div className="row">
+        <div className="row">
         <div className="category">
           <h2 className="category-title">Tortas Cuadradas</h2>
           <div className="item">

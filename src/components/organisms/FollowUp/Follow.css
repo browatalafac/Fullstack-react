@@ -1,12 +1,11 @@
-/* Reset y tipografía */
 .followup-root * {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-    font-size: large;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: large;
 }
 
 .followup-root {
-  padding-top: 0; /* quita el espacio superior */
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,281 +13,344 @@
   background-color: #FFF5E1;
 }
 
-/* TopBar */
+
 .followup-root #top-bar {
-    background-color: #FFF5E1;
-    color: #5D4037;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3rem 5vw;
-    font-size: 1rem;
+  background-color: #FFF5E1;
+  color: #5D4037;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 5vw;
+  font-size: 1rem;
 }
 
-
-.followup-box {
-    background-color: #ffffff;
-    padding: 2.5rem 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    width: 80%;
-    max-width: 500px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.followup-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Título */
-.followup-box h2 {
-    font-family: "Pacifico", cursive;
-    color: #8B4513;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Input y botón */
-.followup-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-.followup-input input {
-    flex: 1;
-    padding: 0.8rem 1rem;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    transition: border 0.3s, box-shadow 0.3s;
-}
-
-.followup-input input:focus {
-    border: 2px solid #8B4513;
-    box-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
-    outline: none;
-}
-
-/* Botón de búsqueda */
-.btn-search {
-    background-color: #FFC0CB;
-    border: none;
-    border-radius: 10px;
-    padding: 0.8rem 1.5rem;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #5D4037;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-search:hover {
-    background-color: #f4a8b7;
-    transform: scale(1.05);
-}
 
 .followup-root #first {
-    display: flex;
-    justify-content: center; /* centra el nav */
-    align-items: center;
-    background-color: #f8c8dc;
-    padding: 0; /* quitar padding que reduce el ancho visual */
-    width: 100vw; /* ocupa todo el ancho */
-    height: 7vh; /* altura similar a tu original */
-    border-top: 2px solid #f4a8b7;
-    border-bottom: 2px solid #f4a8b7;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8c8dc;
+  padding: 0;
+  width: 100vw;
+  height: 7vh;
+  border-top: 2px solid #f4a8b7;
+  border-bottom: 2px solid #f4a8b7;
+  margin-bottom: 2rem;
 }
 
 .followup-root #first nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    width: 100%; /* opcional: hace que el nav ocupe todo el contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
 
 .followup-root a {
-    text-decoration: none;
-    color: #5D4037;
+  text-decoration: none;
+  color: #5D4037;
 }
 
 .followup-root a:hover {
-    color: #8B4513;
+  color: #8B4513;
+}
+
+
+.followup-root .followup-box {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.followup-root .followup-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+.followup-root .followup-box h2 {
+  font-family: "Pacifico", cursive;
+  color: #8B4513;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.followup-root .followup-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.followup-root .followup-input input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.followup-root .followup-input input:focus {
+  border: 2px solid #8B4513;
+  box-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
+  outline: none;
+}
+
+.followup-root .btn-search {
+  background-color: #FFC0CB;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #5D4037;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.followup-root .btn-search:hover {
+  background-color: #f4a8b7;
+  transform: scale(1.05);
 }
 
 
 .followup-root form {
-    width: 70vw;
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #d7ccc8;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 2rem;
-    row-gap: 1.5rem;
-    max-width: 900px;
-    margin-bottom: 3rem;
+  width: 70vw;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #d7ccc8;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  max-width: 900px;
+  margin-bottom: 3rem;
 }
 
 .followup-root h1 {
-    width: 100%;
-    font-size: 2.5rem;
-    font-family: "Pacifico", cursive;
-    color: #8B4513;
-    text-align: center;
-    margin-bottom: 1rem;
+  width: 100%;
+  font-size: 2.5rem;
+  font-family: "Pacifico", cursive;
+  color: #8B4513;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .followup-root .row {
-    display: flex;
-    flex-direction: column;
-    width: calc(50% - 1rem);
-    row-gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 1rem);
+  row-gap: 0.5rem;
 }
 
 .followup-root label {
-    font-weight: 600;
-    color: #5D4037;
+  font-weight: 600;
+  color: #5D4037;
 }
 
 .followup-root input {
-    height: 2.5rem;
-    padding: 0 .8rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    transition: border 0.3s;
+  height: 2.5rem;
+  padding: 0 .8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s;
 }
 
 .followup-root input:focus {
-    border: 1.5px solid #8B4513;
-    outline: none;
+  border: 1.5px solid #8B4513;
+  outline: none;
 }
 
 .followup-root button.btn {
-    width: calc(50% - 1rem);
-    height: 2.5rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-    margin-top: 2rem;
-    color: #5D4037;
+  width: calc(50% - 1rem);
+  height: 2.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  margin-top: 2rem;
+  color: #5D4037;
 }
 
 .followup-root button.reset {
-    background-color: #FFE0E6;
+  background-color: #FFE0E6;
 }
 
 .followup-root button.reset:hover {
-    background-color: #ffccd5;
+  background-color: #ffccd5;
 }
 
 .followup-root button.submit {
-    background-color: #FFC0CB;
+  background-color: #FFC0CB;
 }
 
 .followup-root button.submit:hover {
-    background-color: #f4a8b7;
+  background-color: #f4a8b7;
+}
+
+
+.followup-root .about-follow {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+  padding: 0 1rem 2rem;
+  width: 100%;
+}
+
+.followup-root .about-follow-card {
+  width: 90%;
+  max-width: 820px;
+  background: linear-gradient(180deg, #fffdfa 0%, #fff6f0 100%);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(139,69,19,0.06);
+  color: #5D4037;
+  line-height: 1.5;
+  font-size: 1rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.followup-root .about-follow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.followup-root .about-follow-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.followup-root .about-follow-head h3 {
+  font-family: "Pacifico", cursive;
+  font-size: 1.25rem;
+  margin: 0;
+  color: #8B4513;
+}
+
+.followup-root .about-follow-card p {
+  margin: 0;
+  color: #5D4037;
+  font-size: 0.99rem;
+  opacity: 0.95;
 }
 
 
 .followup-root #pie {
-    background-color: #FFE0B2;
-    color: #5D4037;
-    padding: 2rem 1rem 1rem 1rem;
-    border-top: 2px solid #d7b48c;
-    width: 100%;
-    margin-top: auto;
+  background-color: #FFE0B2;
+  color: #5D4037;
+  padding: 2rem 1rem 1rem 1rem;
+  border-top: 2px solid #d7b48c;
+  width: 100%;
+  margin-top: auto;
 }
 
 .followup-root .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-    padding-bottom: 1rem;
-    margin-left: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  margin-left: 3vh;
 }
 
 .followup-root .footer-section {
-    flex: 1 1 250px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
 }
 
 .followup-root .footer-section h3 {
-    font-family: "Lato", cursive;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: #8B4513;
+  font-family: "Lato", cursive;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #8B4513;
 }
 
 .followup-root .footer-section a {
-    color: #5D4037;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: #5D4037;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .followup-root .footer-section a:hover {
-    color: #BF360C;
+  color: #BF360C;
 }
 
 .followup-root .footer-bottom {
-    text-align: center;
-    border-top: 1px solid #d7b48c;
-    padding-top: 1rem;
-    font-size: 0.9rem;
+  text-align: center;
+  border-top: 1px solid #d7b48c;
+  padding-top: 1rem;
+  font-size: 0.9rem;
 }
 
-.error {
+
+.followup-root .error {
   border: 2px solid red;
   background-color: #ffe6e6;
 }
 
 
 @media (max-width: 768px) {
-    .followup-root form {
-        width: 90vw;
-        padding: 1.5rem;
-    }
+  .followup-root form {
+    width: 90vw;
+    padding: 1.5rem;
+  }
 
-    .followup-root .row {
-        width: 100%;
-    }
+  .followup-root .row {
+    width: 100%;
+  }
 
-    .followup-root button.btn {
-        width: 100%;
-    }
-    
-    .followup-root .you-have {
+  .followup-root button.btn {
+    width: 100%;
+  }
+
+  .followup-root .you-have {
     margin-top: 1.5rem;
     text-align: center;
     font-size: 1rem;
     color: #5D4037;
     font-weight: 500;
-    }
+  }
 
-    .followup-root .you-have a {
+  .followup-root .you-have a {
     color: #7a3d11;
     text-decoration: none;
     font-weight: 600;
     margin-left: 0.3rem;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-    }
+  }
 
-    .followup-root .you-have a:hover {
+  .followup-root .you-have a:hover {
     color: #BF360C;
     text-decoration: underline;
-    }
+  }
+
+  .followup-root .about-follow-card {
+    padding: 1rem;
+    width: 96%;
+  }
+
+  .followup-root .about-follow-head h3 {
+    font-size: 1.1rem;
+  }
+
+  .followup-root .about-follow-card p {
+    font-size: 0.98rem;
+  }
 }

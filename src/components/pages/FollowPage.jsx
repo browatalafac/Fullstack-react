@@ -3,6 +3,7 @@ import Follow from '../organisms/FollowUp/Follow';
 import Footer from '../organisms/Footer';
 import "../organisms/FollowUp/Follow.css";
 import FirstFollow from '../organisms/FollowUp/FirstFollow';
+import AboutFollow from '../organisms/FollowUp/AboutFollow';
 
 export default function FollowPage() {
   return (
@@ -10,6 +11,7 @@ export default function FollowPage() {
     <div className="followup-root">
       <FirstFollow/>
       <Follow/>
+      <AboutFollow/>
       <Footer/>
     </div>
     </>
