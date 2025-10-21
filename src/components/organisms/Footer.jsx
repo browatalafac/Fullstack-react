@@ -16,6 +16,7 @@ export default function Footer() {
           <Link to="/">Inicio</Link>
           <Link to="/about">Sobre nosotros</Link>
           <Link to="#">Nuestras redes sociales</Link>
+          <Link to="/followup">Seguimiento de productos</Link>
         </div>
         <div className="footer-section redes">
           <h3>Síguenos</h3>
