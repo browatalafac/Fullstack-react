@@ -220,6 +220,8 @@
   line-height: 1.5;
   font-size: 1rem;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
+  height: 16%;
+  margin-top: -21%;
 }
 
 .followup-root .about-follow-card:hover {
