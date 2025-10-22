@@ -1,116 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-.profile-root * {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-    font-size: large;
+
+.profile-root, .profile-root * {
+  box-sizing: border-box; 
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: large;
 }
 
-.profile-root .card-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;      
-  gap: 15rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+.profile-root {
+  background-color: #FFF5E1;
+  overflow-x: hidden; 
+  color: #5D4037;
 }
 
 
 .profile-root .nav-left .logo {
-    height: 50px;     
-    width: auto;       
-    vertical-align: middle;
+  height: 50px;
+  width: auto;
+  vertical-align: middle;
 }
 
 .profile-root h1 {
-    font-family: "Lato", cursive;
+  font-family: "Lato", cursive;
 }
 
-.profile-root {
-    background-color: #FFF5E1;
-}
-
+/* Barra superior */
 .profile-root #top-bar {
-    background-color: #FFF5E1;
-    color: #5D4037;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3rem 5vw;
-    font-size: 1rem;
+  background-color: #FFF5E1;
+  color: #5D4037;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 4vw;
+  font-size: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .profile-root #top-bar .social-icons a {
-    color: #5D4037;
-    margin-left: 1rem;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+  color: #5D4037;
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
+.profile-root #top-bar .social-icons a:hover { color: #BF360C; }
 
-.profile-root #top-bar .social-icons a:hover {
-    color: #BF360C;
-}
-
+/* Primera fila (search, nav) */
 .profile-root #first {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5vw;
-    background-color: #f8c8dc;
-    height: 2vh;
-    border-top: 2px solid #f4a8b7;
-    border-bottom: 2px solid #f4a8b7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4vw;
+  background-color: #f8c8dc;
+  border-top: 2px solid #f4a8b7;
+  border-bottom: 2px solid #f4a8b7;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .profile-root .nav-left, .profile-root .nav-right {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .profile-root #search-bar {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .profile-root #search-bar input {
-    padding: 0.3rem 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 200px;
+  max-width: 40vw;
 }
 
 .profile-root #search-bar button {
-    margin-left: 0.3rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    border: none;
-    background-color: #e99fac;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease, transform 0.2s;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #e99fac;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease, transform 0.2s;
+}
+.profile-root #search-bar button:hover { background-color: #c4806b; transform: scale(1.03); }
+
+.profile-root a { text-decoration: none; color: #5D4037; }
+.profile-root a:hover { color: #8B4513; }
+
+
+.profile-root .card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;            
+  margin: 2rem auto 0 auto;
+  width: calc(100% - 4vw);
+  max-width: 1100px;
+  padding: 0 2vw;
 }
 
-.profile-root #search-bar button:hover {
-    background-color: #c4806b;
-    transform: scale(1.05);
-}
-
-.profile-root a {
-    text-decoration: none;
-    color: #5D4037;
-}
-
-.profile-root #first > a {
-    color: #000000;
-}
-
-.profile-root a:hover {
-    color: #8B4513;
-}
-
-
+/* Card perfil (Card1) */
 .profile-root .card1 {
   display: flex;
   align-items: center;
@@ -118,13 +115,11 @@
   border: 2px solid #f4a8b7;
   border-radius: 12px;
   padding: 1.2rem;
-  margin: 0;
-  margin-top: 95px;
   max-width: 450px;
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   gap: 1.5rem;
-  margin-left: 40px;
+  margin: 0 auto;
 }
 
 .profile-root .card1 .photo {
@@ -133,6 +128,7 @@
   border-radius: 50%;
   border: 3px solid #f8c8dc;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .profile-root .card1 .info {
@@ -140,6 +136,7 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
 
 .profile-root .card1 .label {
   font-weight: bold;
@@ -157,9 +154,9 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
   transition: all 0.3s ease;
-  margin-right: 40px;
+  margin: 0 auto;
 }
 
 .profile-root .changeInfo-title {
@@ -211,149 +208,95 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
-
-.profile-root .save-btn:hover {
-  background-color: #e58ca0;
-  transform: scale(1.03);
-}
-
-.profile-root .save-btn:active {
-  transform: scale(0.98);
-}
-
+.profile-root .save-btn:hover { background-color: #e58ca0; transform: scale(1.03); }
+.profile-root .save-btn:active { transform: scale(0.98); }
 
 
 .profile-root #pie {
-    background-color: #FFE0B2;
-    color: #5D4037;
-    padding: 2rem 1rem 1rem 1rem;
-    margin-top: 3rem;
-    border-top: 2px solid #d7b48c;
-    gap: 10rem;
+  background-color: #FFE0B2;
+  color: #5D4037;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-top: 3rem;
+  border-top: 2px solid #d7b48c;
 }
 
 .profile-root .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-    padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding-bottom: 1rem;
 }
-
 .profile-root .footer-section {
-    flex: 1 1 250px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  min-width: 180px;
+}
+.profile-root .footer-section h3 { font-family: "Lato", cursive; font-size: 1.4rem; margin-bottom: 0.5rem; color: #8B4513; }
+.profile-root .footer-section a { color: #5D4037; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+.profile-root .footer-section a:hover { color: #BF360C; }
+.profile-root .footer-bottom { text-align: center; border-top: 1px solid #d7b48c; padding-top: 1rem; font-size: 0.9rem; }
+
+
+@media (max-width: 1024px) {
+  .profile-root .card-container {
+    gap: 1.6rem;
+    padding: 0 3vw;
+  }
+  .profile-root .card1,
+  .profile-root .changeInfo {
+    max-width: 420px;
+  }
 }
 
-.profile-root .footer-section h3 {
-    font-family: "Lato", cursive;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: #8B4513;
-}
-
-.profile-root .footer-section a {
-    color: #5D4037;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.profile-root .footer-section a:hover {
-    color: #BF360C;
-}
-
-.profile-root .footer-bottom {
-    text-align: center;
-    border-top: 1px solid #d7b48c;
-    padding-top: 1rem;
-    font-size: 0.9rem;
-}
 
 @media (max-width: 768px) {
+  .profile-root .card-container {
+    gap: 1rem;
+    padding: 0 4vw;
+    align-items: center;
+  }
 
-    /* --- Barra superior --- */
-    .about-root #top-bar {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        padding: 0.5rem 2vw;
-        gap: 0.5rem;
-    }
-
-    .about-root #first {
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 3vw;
-        height: auto;
-    }
-
-    .about-root .nav-left, 
-    .about-root .nav-right {
-        column-gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .about-root .nav-left .logo {
-        height: 40px;
-    }
-
-    .about-root #search-bar input {
-        width: 140px;
-        font-size: 0.9rem;
-    }
-
-    .about-root #search-bar button {
-        font-size: 0.85rem;
-        padding: 0.3rem 0.5rem;
-    }
-
-    .about-root #second {
-        padding: 1.5rem 5vw;
-    }
-
-    .about-root #second h1,
-    .about-root #second h2,
-    .about-root #second h3 {
-        font-size: 1.2rem;
-        margin: 2rem 0 1rem 0;
-    }
-
-    .about-root #second img {
-        width: 90%;
-        max-width: 350px;
-    }
-
-    .about-root .img-sobre {
-        max-width: 90%;
-    }
-
-    .about-root .img-mision {
-        max-width: 70%;
-    }
-
-    .about-root .img-vision {
-        max-width: 150px;
-    }
-
-    .about-root .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    .about-root .footer-section h3 {
-        font-size: 1.2rem;
-    }
-
-    .about-root .footer-bottom {
-        font-size: 0.8rem;
-    }
+  .profile-root .card-container {
+    flex-direction: column;
+  }
+  .profile-root .card1 {
+    margin-top: 1rem;
+  }
+  .profile-root .changeInfo {
+    margin-top: 0.6rem;
+  }
+  .profile-root .card1 .photo {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-root .changeInfo {
+    padding: 1.4rem;
+  }
+  .profile-root #top-bar { padding: 0.4rem 3vw; }
+  .profile-root #search-bar input { width: 160px; max-width: 60vw; }
 }
 
 
+@media (max-width: 480px) {
+  .profile-root .card-container { gap: 0.8rem; width: calc(100% - 4vw); padding: 0 2vw; }
+  .profile-root .card1 { max-width: 360px; padding: 0.9rem; gap: 1rem; }
+  .profile-root .card1 .photo { width: 88px; height: 88px; }
+  .profile-root .changeInfo { max-width: 360px; padding: 1rem; gap: 0.9rem; }
+  .profile-root .changeInfo input { padding: 0.7rem; font-size: 0.95rem; }
+  .profile-root .changeInfo-title { font-size: 1.3rem; padding-bottom: 0.4rem; }
+  .profile-root .save-btn { padding: 0.7rem; font-size: 0.95rem; }
+}
+
+
+@media (max-width: 375px) {
+  .profile-root .card-container { padding: 0 3vw; width: calc(100% - 6vw); gap: 0.6rem; }
+  .profile-root .card1 { max-width: 320px; padding: 0.8rem; }
+  .profile-root .card1 .photo { width: 76px; height: 76px; }
+  .profile-root .changeInfo { max-width: 320px; padding: 0.9rem; }
+  .profile-root .changeInfo input { padding: 0.6rem; font-size: 0.9rem; }
+  .profile-root .changeInfo-title { font-size: 1.15rem; }
+  .profile-root #top-bar { padding: 0.3rem 3vw; }
+}

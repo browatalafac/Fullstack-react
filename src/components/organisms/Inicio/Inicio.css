@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-.inicio-root * {
+
+.inicio-root, .inicio-root * {
+    box-sizing: border-box;
     margin: 0;
     font-family: "Lato", sans-serif;
     font-size: large;
 }
 
+
 .inicio-root .nav-left .logo {
-    height: 50px;     
-    width: auto;       
+    height: 50px;
+    width: auto;
     vertical-align: middle;
 }
 
@@ -19,6 +22,7 @@
 
 .inicio-root {
     background-color: #FFF5E1;
+    overflow-x: hidden;
 }
 
 .inicio-root #top-bar {
@@ -27,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 5vw;
+    padding: 0.3rem 4vw;
     font-size: 1rem;
 }
 
@@ -42,20 +46,21 @@
     color: #BF360C;
 }
 
+
 .inicio-root #first {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5vw;
+    padding: 1rem 4vw; 
     background-color: #f8c8dc;
-    height: 2vh;
+   
     border-top: 2px solid #f4a8b7;
     border-bottom: 2px solid #f4a8b7;
 }
 
 .inicio-root .nav-left, .inicio-root .nav-right {
     display: flex;
-    gap: 2rem;
+    gap: 1rem; 
     align-items: center;
 }
 
@@ -69,6 +74,8 @@
     border-radius: 8px;
     border: 1px solid #ccc;
     outline: none;
+    max-width: 220px;
+    width: 100%;
 }
 
 .inicio-root #search-bar button {
@@ -100,11 +107,13 @@
     color: #8B4513;
 }
 
+
+
 .inicio-root #second {
-    height: 65vh;
-    width: 90%;
-    margin-top: 1rem;
-    margin-left: 50px;
+    min-height: 65vh;
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+    margin: 1rem auto; 
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
@@ -116,6 +125,7 @@
     background-repeat: no-repeat;
     position: relative;
     padding-left: 5%;
+    padding-right: 5%;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -152,6 +162,7 @@
     text-shadow: #00000066 1px 1px 2px;
 }
 
+
 .inicio-root #third {
     display: flex;
     flex-direction: column;
@@ -168,24 +179,29 @@
     font-family: "Lato", cursive;
 }
 
+
 .inicio-root #popular1 {
     display: flex;
     flex-wrap: wrap;
-    width: 799px;
+    width: 100%;
     gap: 1rem;
     justify-content: center;
 }
+
 
 .inicio-root .pastel-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 260px; 
 }
 
 .inicio-root .pastel {
-    width: 250px;
-    height: 250px;
+    width: min(250px, 45vw); 
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 12px;
     background-size: cover;
     background-position: center;
@@ -196,6 +212,7 @@
 .inicio-root .pastel:hover {
     transform: scale(1.05);
 }
+
 
 .inicio-root .pastel1 { background-image: url('https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg'); }
 .inicio-root .pastel2 { background-image: url('https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg'); }
@@ -217,6 +234,7 @@
     margin-top: 0.2rem;
 }
 
+
 .inicio-root .btn {
     margin-top: 0.6rem;
     padding: 0.6rem 1.2rem;
@@ -233,6 +251,7 @@
     background: #c4806b;
     transform: scale(1.05);
 }
+
 
 .inicio-root #pie {
     background-color: #FFE0B2;
@@ -256,6 +275,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 0.5rem;
+    min-width: 180px;
 }
 
 .inicio-root .footer-section h3 {
@@ -283,37 +303,94 @@
     font-size: 0.9rem;
 }
 
-@media(max-width:830px) {
-    .inicio-root #second > p {
-        width: 90%;
-    }
+
+@media (max-width: 500px) {
+  .inicio-root #second {
+    padding: 1rem 4%;
+    width: calc(100% - 2rem);
+  }
+
+  .inicio-root #second > h1 {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+  .inicio-root #second > p {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .inicio-root #first {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.6rem 4%;
+    align-items: center;
+  }
+
+  .inicio-root #search-bar {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .inicio-root #search-bar input,
+  .inicio-root #search-bar button {
+    width: 100%;
+    margin-bottom: 0.4rem;
+    max-width: none;
+  }
+
+  .inicio-root #popular1 {
+    gap: 0.6rem;
+  }
+
+  .inicio-root .pastel {
+    width: min(180px, 40vw);
+  }
+  .inicio-root .pastel-item {
+    max-width: 90%;
+  }
+
+  .inicio-root .pastel-name {
+    font-size: 0.95rem;
+  }
+  .inicio-root .pastel-price {
+    font-size: 0.9rem;
+  }
+
+  .inicio-root .footer-section {
+    width: 100%;
+    text-align: center;
+    padding: 0 1rem;
+  }
 }
 
-@media(max-width:700px) {
-    .inicio-root #third,
-    .inicio-root #fifth {
-        height: fit-content;
-        flex-direction: column;
-        margin: 5vh 0px;
-    }
 
-    .inicio-root .content_third {
-        width: 90vw;
-        padding: 5vw;
-    }
+@media (max-width: 375px) {
+  .inicio-root #second > h1 {
+    font-size: 1.1rem;
+  }
+  .inicio-root #second > p {
+    font-size: 0.8rem;
+  }
+  .inicio-root .pastel {
+    width: min(160px, 45vw);
+  }
+  .inicio-root .pastel-item {
+    padding: 0.4rem 0;
+  }
 
-    .inicio-root #first {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
 
-    .inicio-root #populares {
-        width: fit-content;
-        padding: 1rem;
-    }
+  .inicio-root #top-bar,
+  .inicio-root #first {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
 
-    .inicio-root .client {
-        width: 40vw;
-        height: 40vw;
-    }
+  .inicio-root #first {
+    gap: 0.3rem;
+  }
+
+  .inicio-root .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
 }
