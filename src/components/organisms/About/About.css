@@ -179,3 +179,55 @@
     padding-top: 1rem;
     font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+    .about-root #top-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .about-root #first {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .about-root .nav-left, 
+    .about-root .nav-right {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about-root #search-bar {
+        margin-top: 0.5rem;
+    }
+
+    .about-root #second {
+        padding: 1rem 5vw;
+    }
+
+    .about-root .img-sobre {
+        max-width: 90%;
+    }
+
+    .about-root .img-mision {
+        max-width: 70%;
+    }
+
+    .about-root .img-vision {
+        max-width: 150px;
+    }
+
+    .about-root .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .about-root .footer-section {
+        text-align: center;
+    }
+}

@@ -272,4 +272,88 @@
     font-size: 0.9rem;
 }
 
+@media (max-width: 768px) {
+
+    /* --- Barra superior --- */
+    .about-root #top-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 0.5rem 2vw;
+        gap: 0.5rem;
+    }
+
+    .about-root #first {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 3vw;
+        height: auto;
+    }
+
+    .about-root .nav-left, 
+    .about-root .nav-right {
+        column-gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .about-root .nav-left .logo {
+        height: 40px;
+    }
+
+    .about-root #search-bar input {
+        width: 140px;
+        font-size: 0.9rem;
+    }
+
+    .about-root #search-bar button {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .about-root #second {
+        padding: 1.5rem 5vw;
+    }
+
+    .about-root #second h1,
+    .about-root #second h2,
+    .about-root #second h3 {
+        font-size: 1.2rem;
+        margin: 2rem 0 1rem 0;
+    }
+
+    .about-root #second img {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .about-root .img-sobre {
+        max-width: 90%;
+    }
+
+    .about-root .img-mision {
+        max-width: 70%;
+    }
+
+    .about-root .img-vision {
+        max-width: 150px;
+    }
+
+    .about-root .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .about-root .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-root .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
+
 
