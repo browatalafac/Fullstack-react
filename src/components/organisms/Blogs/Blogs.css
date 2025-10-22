@@ -15,8 +15,6 @@
   min-height: 100vh;
 }
 
-/* --- NAV & TOP BAR --- */
-
 .blogs-root .nav-left .logo {
   height: 50px;
   width: auto;
@@ -111,8 +109,6 @@
 .blogs-root #cart:hover {
   color: #8B4513;
 }
-
-/* --- HEADER --- */
 
 .blogs-root header {
   text-align: center;

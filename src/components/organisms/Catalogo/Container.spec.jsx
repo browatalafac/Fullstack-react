@@ -27,8 +27,6 @@ describe('Container Component', () => {
     it('carga correctamente el carrito guardado desde localStorage', () => {
         render(<Container />)
         expect(localStorage.getItem).toHaveBeenCalledWith("products")
-        // además comprobamos que el estado inicial contenga uno de los productos mock
-        // (se verifica indirectamente buscando un nombre que está en el mock)
         expect(screen.getByText("Torta Cuadrada de Chocolate")).toBeInTheDocument()
     })
 

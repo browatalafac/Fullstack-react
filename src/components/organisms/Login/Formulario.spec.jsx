@@ -29,8 +29,8 @@ describe('Formulario Component', () => {
         const inputEmail = screen.getByLabelText("E-mail")
         const botonEnviar = screen.getByText("Enviar")
 
-        fireEvent.change(inputNombre, { target: { value: "Pedro" } })
-        fireEvent.change(inputEmail, { target: { value: "pedrocorreo.com" } })
+        fireEvent.change(inputNombre, { target: { value: "tomas" } })
+        fireEvent.change(inputEmail, { target: { value: "tomas@correo.com" } })
         fireEvent.click(botonEnviar)
 
         expect(screen.getByText("Añade un signo arroba (@) en el email.")).toBeInTheDocument()
@@ -50,6 +50,6 @@ describe('Formulario Component', () => {
 
         expect(screen.queryByText(/error/i)).toBeNull()
 
-        expect(window.alert).toHaveBeenCalledWith("Formulario enviado correctamente ✅")
+        expect(window.alert).toHaveBeenCalledWith("Formulario enviado correctamente")
     })
 })

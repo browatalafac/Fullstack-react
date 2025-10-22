@@ -5,7 +5,7 @@
 }
 
 .login-root {
-  padding-top: 0; /* quita el espacio superior */
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,12 +26,12 @@
 
 .login-root #first {
     display: flex;
-    justify-content: center; /* centra el nav */
+    justify-content: center;
     align-items: center;
     background-color: #f8c8dc;
-    padding: 0; /* quitar padding que reduce el ancho visual */
-    width: 100vw; /* ocupa todo el ancho */
-    height: 7vh; /* altura similar a tu original */
+    padding: 0;
+    width: 100vw;
+    height: 7vh;
     border-top: 2px solid #f4a8b7;
     border-bottom: 2px solid #f4a8b7;
     margin-bottom: 2rem;
@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    width: 100%; /* opcional: hace que el nav ocupe todo el contenedor */
+    width: 100%;
 }
 
 .login-root a {

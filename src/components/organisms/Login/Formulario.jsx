@@ -25,7 +25,6 @@ export default function Formulario() {
       return;
     }
 
-    // Si todo está correcto
     setErrores("");
     alert("Formulario enviado correctamente ✅");
   };

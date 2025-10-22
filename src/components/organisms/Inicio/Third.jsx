@@ -1,6 +1,5 @@
 import React from "react";
-import Product from "../Product"; // Ajusta la ruta según tu proyecto
-
+import Product from "../Product";
 export default function Third() {
   const products = [
     {

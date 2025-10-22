@@ -26,7 +26,6 @@
   font-family: "Lato", cursive;
 }
 
-/* Barra superior */
 .profile-root #top-bar {
   background-color: #FFF5E1;
   color: #5D4037;
@@ -47,7 +46,6 @@
 }
 .profile-root #top-bar .social-icons a:hover { color: #BF360C; }
 
-/* Primera fila (search, nav) */
 .profile-root #first {
   display: flex;
   justify-content: space-between;
@@ -107,7 +105,6 @@
   padding: 0 2vw;
 }
 
-/* Card perfil (Card1) */
 .profile-root .card1 {
   display: flex;
   align-items: center;
