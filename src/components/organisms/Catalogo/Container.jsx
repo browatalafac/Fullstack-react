@@ -36,7 +36,6 @@ export default function Container() {
 
   return (
     <div className="container">
-      {/* Primera fila */}
         <div className="row">
         <div className="category">
           <h2 className="category-title">Tortas Cuadradas</h2>
@@ -117,7 +116,6 @@ export default function Container() {
         </div>
       </div>
 
-      {/* Segunda fila */}
       <div className="row">
         <div className="category">
           <h2 className="category-title">Productos Sin Azúcar</h2>
@@ -198,7 +196,6 @@ export default function Container() {
         </div>
       </div>
 
-      {/* Tercera fila */}
       <div className="row row-last">
         <div className="category">
           <h2 className="category-title">Productos Veganos</h2>

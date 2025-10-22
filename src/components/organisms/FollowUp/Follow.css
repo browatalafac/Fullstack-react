@@ -13,7 +13,6 @@
   background-color: #FFF5E1;
 }
 
-
 .followup-root #top-bar {
   background-color: #FFF5E1;
   color: #5D4037;
@@ -23,7 +22,6 @@
   padding: 0.3rem 5vw;
   font-size: 1rem;
 }
-
 
 .followup-root #first {
   display: flex;
@@ -55,7 +53,6 @@
   color: #8B4513;
 }
 
-
 .followup-root .followup-box {
   background-color: #ffffff;
   padding: 2.5rem 2rem;
@@ -79,7 +76,6 @@
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-
 
 .followup-root .followup-input {
   display: flex;
@@ -119,7 +115,6 @@
   background-color: #f4a8b7;
   transform: scale(1.05);
 }
-
 
 .followup-root form {
   width: 70vw;
@@ -306,7 +301,6 @@
   border: 2px solid red;
   background-color: #ffe6e6;
 }
-
 
 @media (max-width: 768px) {
   .followup-root form {

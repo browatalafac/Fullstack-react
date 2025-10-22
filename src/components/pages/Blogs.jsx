@@ -21,4 +21,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;  // Esta es la exportación por defecto
+export default Blogs;

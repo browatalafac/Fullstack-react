@@ -236,7 +236,6 @@
 .profile-root .footer-section a:hover { color: #BF360C; }
 .profile-root .footer-bottom { text-align: center; border-top: 1px solid #d7b48c; padding-top: 1rem; font-size: 0.9rem; }
 
-
 @media (max-width: 1024px) {
   .profile-root .card-container {
     gap: 1.6rem;
@@ -247,7 +246,6 @@
     max-width: 420px;
   }
 }
-
 
 @media (max-width: 768px) {
   .profile-root .card-container {
@@ -276,7 +274,6 @@
   .profile-root #search-bar input { width: 160px; max-width: 60vw; }
 }
 
-
 @media (max-width: 480px) {
   .profile-root .card-container { gap: 0.8rem; width: calc(100% - 4vw); padding: 0 2vw; }
   .profile-root .card1 { max-width: 360px; padding: 0.9rem; gap: 1rem; }
@@ -286,7 +283,6 @@
   .profile-root .changeInfo-title { font-size: 1.3rem; padding-bottom: 0.4rem; }
   .profile-root .save-btn { padding: 0.7rem; font-size: 0.95rem; }
 }
-
 
 @media (max-width: 375px) {
   .profile-root .card-container { padding: 0 3vw; width: calc(100% - 6vw); gap: 0.6rem; }

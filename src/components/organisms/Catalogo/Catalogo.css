@@ -9,7 +9,6 @@
   font-size: large;
 }
 
-
 .catalog-root {
   background-color: #FFF5E1;
   overflow-x: hidden;
@@ -22,7 +21,6 @@
   width: auto;
   vertical-align: middle;
 }
-
 
 .catalog-root a {
   text-decoration: none;
@@ -144,7 +142,6 @@
   text-align: center;
 }
 
-
 .catalog-root .item {
   background: #f4a8b7;
   border-radius: 12px;
@@ -158,7 +155,6 @@
 }
 .catalog-root .item:hover { transform: scale(1.03); }
 
-
 .catalog-root .img {
   width: min(250px, 45vw); 
   height: auto;
@@ -170,7 +166,6 @@
   background-color: #f8d7da;
 }
 
-
 .catalog-root .name {
   font-weight: 700;
   color: #5D4037;
@@ -181,7 +176,6 @@
   color: white;
   margin-bottom: 0.5rem;
 }
-
 
 .catalog-root .img-TC001 { background-image: url('https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg'); }
 .catalog-root .img-TC002 { background-image: url('https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg'); }
@@ -200,7 +194,6 @@
 .catalog-root .img-TE001 { background-image: url('https://i.pinimg.com/originals/aa/a0/4f/aaa04fb61005c9fc6d748dee6eac76f3.jpg'); }
 .catalog-root .img-TE002 { background-image: url('https://i.pinimg.com/474x/3b/bc/bb/3bbcbb826b865e5278f53a5b2661c2e5.jpg'); }
 
-
 .catalog-root .btn {
   padding: 0.4rem 0.8rem;
   border: none;
@@ -212,7 +205,6 @@
   transition: all 0.3s ease;
 }
 .catalog-root .btn:hover { background: #c4806b; transform: scale(1.03); }
-
 
 .catalog-root #pie {
   background-color: #FFE0B2;
@@ -241,7 +233,6 @@
 .catalog-root .footer-section a:hover { color: #BF360C; }
 .catalog-root .footer-bottom { text-align: center; border-top: 1px solid #d7b48c; padding-top: 1rem; font-size: 0.9rem; }
 
-
 .catalog-root #toast {
   position: fixed;
   bottom: 20px;
@@ -258,10 +249,6 @@
   z-index: 1000;
 }
 .catalog-root #toast.show { opacity: 1; transform: translateY(0); }
-
-
-
-
 
 @media(max-width: 1024px) {
   .catalog-root .category { flex: 1 1 calc(48% - 1rem); max-width: none; }

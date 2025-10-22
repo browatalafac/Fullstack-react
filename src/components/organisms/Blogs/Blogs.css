@@ -127,8 +127,6 @@
   font-style: italic;
 }
 
-/* --- MAIN --- */
-
 .blogs-root main {
   padding: 2rem;
   display: grid;
@@ -176,8 +174,6 @@
   background: #c4806b;
   transform: scale(1.05);
 }
-
-/* --- FOOTER --- */
 
 .blogs-root #pie {
     background-color: #FFE0B2;
@@ -249,8 +245,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
-/* --- RESPONSIVE --- */
 
 @media (max-width:700px) {
   .blogs-root main {
