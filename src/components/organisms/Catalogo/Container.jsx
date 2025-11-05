@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ProductoService from "../services/ProductoService"; 
+import ProductoService from "../../../services/ProductoService";
 
 export default function Container() {
   const [productos, setProductos] = useState([]);
@@ -9,6 +9,7 @@ export default function Container() {
   useEffect(() => {
     ProductoService.getAllProductos()
       .then((response) => {
+        console.log("Productos cargados:", response.data);
         setProductos(response.data);
       })
       .catch((error) => {

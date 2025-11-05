@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'http://localhost:8080/api/v1/productos';
+const BASE_URL = 'http://localhost:8081/api/v1/productos';
 
 class ProductoService{
     getAllProductos(){
@@ -24,4 +24,4 @@ class ProductoService{
 
 
 }
-export default new (ProductoService);
+export default new ProductoService();
