@@ -1,26 +1,32 @@
 import axios from "axios";
-const BASE_URL = 'http://localhost:8080/api/v1/usuarios';
 
-class UsuarioService{
-    getAllUsuarios(){
+const BASE_URL = 'http://localhost:8081/api/v1/usuarios';
+
+class UsuarioService {
+    
+    getAllUsuarios() {
         return axios.get(BASE_URL);
     }
-
-    getUsuarioById(id){
+    
+    getUsuarioById(id) {
         return axios.get(`${BASE_URL}/${id}`);
     }
 
-    saveUsuario(usuario){
-        return axios.post(`${BASE_URL}/${id}`, usuario);
+    saveUsuario(usuario) {
+        return axios.post(BASE_URL, usuario);
     }
-
-    updateUsuario(id,usuario){
-        return axios.put(`${BASE_URL}/${id}`);
+   
+    updateUsuario(id, usuario) {
+        return axios.put(`${BASE_URL}/${id}`, usuario);
     }
-
-    deleteUsuario(id){
+   
+    deleteUsuario(id) {
         return axios.delete(`${BASE_URL}/${id}`);
     }
-
+    
+    login(usuario) {
+        return axios.post(`${BASE_URL}/login`, usuario);
+    }
 }
-export default new (UsuarioService);
+
+export default new UsuarioService();

@@ -24,4 +24,4 @@ class CompraService{
 
 
 }
-export default new (CompraService);
+export default new CompraService();

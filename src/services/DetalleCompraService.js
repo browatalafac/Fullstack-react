@@ -11,4 +11,4 @@ class DetalleCompraService{
     }
 
 }
-export default new (DetalleCompraService);
+export default new DetalleCompraService();

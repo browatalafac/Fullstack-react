@@ -1,31 +1,56 @@
 import React, { useState } from "react";
+import UsuarioService from "../../../services/UsuarioService";
 
 export default function FormularioLogin() {
   const [email, setEmail] = useState("");
   const [clave, setClave] = useState("");
   const [errores, setErrores] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // 🔹 Validaciones básicas
     if (!email.includes("@")) {
       setErrores("El correo debe contener un signo arroba (@).");
       return;
     }
 
-    if (clave.length < 6) {
-      setErrores("La contraseña debe tener al menos 6 caracteres.");
+    if (clave.trim() === "") {
+      setErrores("Ingrese su contraseña.");
       return;
     }
 
     setErrores("");
-    alert("Inicio de sesión exitoso");
+
+    // 🔹 Crear el objeto igual que en el backend
+    const usuarioLogin = {
+      correo: email,
+      contrasena: clave
+    };
+
+    // 🔹 Llamar al backend (Spring Boot)
+    UsuarioService.login(usuarioLogin)
+      .then((response) => {
+        console.log("Usuario autenticado:", response.data);
+        setMensaje("✅ Inicio de sesión exitoso");
+        // Guardar usuario en localStorage
+        localStorage.setItem("usuario", JSON.stringify(response.data));
+
+        // Opcional: redirigir a otra página
+        // window.location.href = "/catalogo";
+      })
+      .catch((error) => {
+        console.error("Error al iniciar sesión:", error);
+        setErrores("❌ Correo o contraseña incorrectos");
+      });
   };
 
   const handleReset = () => {
     setEmail("");
     setClave("");
     setErrores("");
+    setMensaje("");
   };
 
   return (
@@ -39,7 +64,6 @@ export default function FormularioLogin() {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={email.length > 0 && !email.includes("@") ? "error" : ""}
           placeholder="tuemail@gmail.com"
         />
       </div>
@@ -51,19 +75,21 @@ export default function FormularioLogin() {
           id="clave"
           value={clave}
           onChange={(e) => setClave(e.target.value)}
-          className={clave.length > 0 && clave.length < 6 ? "error" : ""}
           placeholder="Tu contraseña"
         />
       </div>
 
-      <button type="button" className="btn reset" onClick={handleReset}>
-        Limpiar
-      </button>
-      <button type="submit" className="btn submit">
-        Ingresar
-      </button>
+      <div style={{ marginTop: "1rem" }}>
+        <button type="button" className="btn reset" onClick={handleReset}>
+          Limpiar
+        </button>
+        <button type="submit" className="btn submit">
+          Ingresar
+        </button>
+      </div>
 
       {errores && <p id="errores" style={{ color: "red" }}>{errores}</p>}
+      {mensaje && <p style={{ color: "green" }}>{mensaje}</p>}
     </form>
   );
 }
