@@ -68,7 +68,7 @@ export default function Container() {
     localStorage.setItem("products", JSON.stringify(updatedCart));
   };
 
-  // 🔍 Agrupar productos por prefijo del ID
+  //  Agrupar productos por prefijo del ID
   const productosPorCategoria = productos.reduce((grupos, prod) => {
     const prefijo = prod.id.match(/^[A-Z]+/)[0];
     if (!grupos[prefijo]) grupos[prefijo] = [];
