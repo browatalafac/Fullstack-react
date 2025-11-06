@@ -10,7 +10,7 @@ export default function FormularioLogin() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 🔹 Validaciones básicas
+    // Validaciones básicas
     if (!email.includes("@")) {
       setErrores("El correo debe contener un signo arroba (@).");
       return;
@@ -23,13 +23,13 @@ export default function FormularioLogin() {
 
     setErrores("");
 
-    // 🔹 Crear el objeto igual que en el backend
+    // Crear el objeto igual que en el backend
     const usuarioLogin = {
       correo: email,
       contrasena: clave
     };
 
-    // 🔹 Llamar al backend (Spring Boot)
+    // Llamar al backend (Spring Boot)
     UsuarioService.login(usuarioLogin)
       .then((response) => {
         console.log("Usuario autenticado:", response.data);

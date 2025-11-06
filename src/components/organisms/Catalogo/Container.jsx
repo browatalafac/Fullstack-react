@@ -1,6 +1,34 @@
 import React, { useState, useEffect } from "react";
 import ProductoService from "../../../services/ProductoService";
 
+
+//Este es un catalogo de ejemplo en caso de que el backend no este funcionando
+const defaultCatalog = [
+  {
+    id: "TC001",
+    nombre: "Torta de Chocolate",
+    precio: 18990,
+    imagenUrl:
+      "https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg",
+  },
+  {
+    id: "TC002",
+    nombre: "Tarta de Frutas",
+    precio: 15990,
+    imagenUrl:
+      "https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg",
+  },
+  {
+    id: "TT001",
+    nombre: "Torta de Vainilla",
+    precio: 13990,
+    imagenUrl:
+      "https://tortamaniaecuador.com/wp-content/uploads/2022/12/Vainilla-con-crema-pequena-300x300.png",
+  },
+];
+
+
+// Componente Container para mostrar el catálogo de productos
 export default function Container() {
   const [productos, setProductos] = useState([]);
   const [cart, setCart] = useState([]);
