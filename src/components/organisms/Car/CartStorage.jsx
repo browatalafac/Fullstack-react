@@ -10,6 +10,16 @@ export default function CartStorage() {
     setProducts(savedProducts);
   }, []);
 
+  // Escucha actualizaciones del carrito hechas desde otros componentes
+  useEffect(() => {
+    const onCartUpdated = () => {
+      const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
+      setProducts(savedProducts);
+    };
+    window.addEventListener("cartUpdated", onCartUpdated);
+    return () => window.removeEventListener("cartUpdated", onCartUpdated);
+  }, []);
+
   
   const removeProduct = (indexToRemove) => {
     const updatedProducts = products.filter((_, index) => index !== indexToRemove);
@@ -22,7 +32,7 @@ export default function CartStorage() {
     localStorage.removeItem("products");
   };
 
-  const subtotal = products.reduce((sum, p) => sum + Number(p.price), 0);
+  const subtotal = products.reduce((sum, p) => sum + Number(p.price) * (p.cantidad || 1), 0);
   const shipping = products.length ? 5000 : 0;
   const total = subtotal + shipping;
 

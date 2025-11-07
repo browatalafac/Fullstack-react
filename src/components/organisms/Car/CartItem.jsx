@@ -13,7 +13,7 @@ export default function CartItem({ product, removeProduct }) {
         <p className="desc">{description}</p>
       </div>
       <div className="item-actions">
-        <span className="quantity">x1</span>
+        <span className="quantity">x{product.cantidad || 1}</span>
         <button className="remove-btn" onClick={() => removeProduct(code)}>
           ✖
         </button>

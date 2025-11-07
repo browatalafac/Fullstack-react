@@ -64,6 +64,7 @@ export default function Container() {
 
     setCart(updatedCart);
     localStorage.setItem("products", JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event("cartUpdated"));
 
     setMensaje(`✅ ${product.name} agregada al carrito`);
     setTimeout(() => setMensaje(""), 2000);
@@ -71,7 +72,6 @@ export default function Container() {
 
   return (
     <div className="container" style={{ padding: "20px", position: "relative" }}>
-      <h2 style={{ marginBottom: "20px", textAlign: "center" }}>Catálogo de Productos</h2>
 
       {/* 🧁 Mensaje flotante */}
       {mensaje && (
