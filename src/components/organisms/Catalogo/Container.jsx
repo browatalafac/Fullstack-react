@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductoService from "../../../services/ProductoService";
 
-// catálogo local por defecto
+// Catálogo local por defecto
 const defaultCatalog = [
   { id: "TC001", nombre: "Torta de Chocolate", precio: 18990, imagenUrl: "https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg" },
   { id: "TC002", nombre: "Tarta de Frutas", precio: 15990, imagenUrl: "https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg" },
@@ -16,6 +16,7 @@ export default function Container() {
   const [cart, setCart] = useState([]);
   const [mensaje, setMensaje] = useState("");
 
+  // 🔹 Cargar productos (desde backend o catálogo por defecto)
   useEffect(() => {
     ProductoService.getAllProductos()
       .then((response) => {
@@ -28,11 +29,13 @@ export default function Container() {
       .catch(() => setProductos(defaultCatalog));
   }, []);
 
+  // 🔹 Cargar carrito guardado en localStorage
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("products")) || [];
     setCart(savedCart);
   }, []);
 
+  // 🛒 Agregar producto al carrito
   const addToCart = (product) => {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
 
@@ -43,8 +46,22 @@ export default function Container() {
       return;
     }
 
-    // ✅ Si hay usuario, agregar producto al carrito
-    const updatedCart = [...cart, product];
+    // ✅ Buscar si el producto ya existe en el carrito
+    const existing = cart.find(p => p.code === product.code);
+
+    let updatedCart;
+    if (existing) {
+      // Si existe, solo aumenta la cantidad
+      updatedCart = cart.map(p =>
+        p.code === product.code
+          ? { ...p, cantidad: p.cantidad + 1 }
+          : p
+      );
+    } else {
+      // Si no existe, agregarlo con cantidad 1
+      updatedCart = [...cart, { ...product, cantidad: 1, usuarioId: usuario.id }];
+    }
+
     setCart(updatedCart);
     localStorage.setItem("products", JSON.stringify(updatedCart));
 

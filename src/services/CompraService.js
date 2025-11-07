@@ -10,9 +10,9 @@ class CompraService{
         return axios.get(`${BASE_URL}/${id}`);
     }
 
-    saveCompra(compra){
-        return axios.post(`${BASE_URL}/${id}`, compra);
-    }
+      saveCompra(compra) {
+    return axios.post(BASE_URL, compra);
+  }
 
     updateCompra(id,compra){
         return axios.put(`${BASE_URL}/${id}`);
