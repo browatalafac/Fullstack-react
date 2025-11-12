@@ -21,19 +21,19 @@ export default function Card1() {
         setPerfil(res.data);
       })
       .catch(() => {
-        // Si falla la carga desde backend, usar lo que haya en localStorage como fallback
+        // si falla la carga desde el back, usa lo que haya en el localstorage como fallback
         setPerfil(usuarioLocal);
       })
       .finally(() => setLoading(false));
   }, []);
 
   const nombreCompleto = perfil
-    ? perfil.nombreCompleto || `${perfil.nombres || perfil.nombre || ''} ${perfil.apellidos || perfil.apellido || ''}`.trim()
-    : '';
+    ? perfil.nombreCompleto || `${perfil.nombres || perfil.nombre || ''} ${perfil.apellidos || perfil.apellido || ''}`.trim(): '';
   const correo = perfil?.correo || perfil?.email || '';
   const direccion = perfil?.direccion || perfil?.dirección || '';
   const foto =
     perfil?.fotoUrl || perfil?.foto || perfil?.avatar || 'https://randomuser.me/api/portraits/men/32.jpg';
+  const inicial = ((nombreCompleto || correo || '').trim().charAt(0) || '?').toUpperCase();
 
   if (loading) {
     return (
@@ -53,7 +53,22 @@ export default function Card1() {
 
   return (
     <div className="card1">
-      <img className="photo" src={foto} alt="Foto de perfil" />
+      <div
+        className="photo"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: '50%',
+          background: '#ececec',
+          color: '#333',
+          fontWeight: 700,
+          fontSize: '2rem',
+          textTransform: 'uppercase'
+        }}
+      >
+        {inicial}
+      </div>
       <div className="info">
         <div><span className="label">Nombre Completo :</span> {nombreCompleto || '—'}</div>
         <div><span className="label">Correo Electrónico :</span> {correo || '—'}</div>
