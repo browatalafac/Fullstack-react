@@ -126,6 +126,14 @@
   border: 3px solid #f8c8dc;
   object-fit: cover;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ececec;
+  color: #333;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .profile-root .card1 .info {

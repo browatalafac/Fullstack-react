@@ -31,8 +31,6 @@ export default function Card1() {
     ? perfil.nombreCompleto || `${perfil.nombres || perfil.nombre || ''} ${perfil.apellidos || perfil.apellido || ''}`.trim(): '';
   const correo = perfil?.correo || perfil?.email || '';
   const direccion = perfil?.direccion || perfil?.dirección || '';
-  const foto =
-    perfil?.fotoUrl || perfil?.foto || perfil?.avatar || 'https://randomuser.me/api/portraits/men/32.jpg';
   const inicial = ((nombreCompleto || correo || '').trim().charAt(0) || '?').toUpperCase();
 
   if (loading) {
@@ -53,20 +51,7 @@ export default function Card1() {
 
   return (
     <div className="card1">
-      <div
-        className="photo"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '50%',
-          background: '#ececec',
-          color: '#333',
-          fontWeight: 700,
-          fontSize: '2rem',
-          textTransform: 'uppercase'
-        }}
-      >
+      <div className="photo">
         {inicial}
       </div>
       <div className="info">
