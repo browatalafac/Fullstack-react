@@ -20,6 +20,11 @@ export default function Formulario() {
       return;
     }
 
+    if (apellidos.trim() === "") {
+      setErrores("Ingrese su apellido.");
+      return;
+    }
+
     if (!email.includes("@")) {
       setErrores("Añade un signo arroba (@) en el email.");
       return;
@@ -37,9 +42,10 @@ export default function Formulario() {
 
     setErrores("");
 
-    // 🔹 Crear objeto igual al modelo del backend
+    // 🔹 Crear objeto igual al modelo del backend (nombre y apellido separados)
     const nuevoUsuario = {
-      nombre: nombre + " " + apellidos,
+      nombre: nombre,
+      apellido: apellidos,
       correo: email,
       contrasena: clave1,
       direccion: direccion

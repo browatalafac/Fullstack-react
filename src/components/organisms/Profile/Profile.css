@@ -216,6 +216,15 @@
 .profile-root .save-btn:hover { background-color: #e58ca0; transform: scale(1.03); }
 .profile-root .save-btn:active { transform: scale(0.98); }
 
+.profile-root .save-feedback {
+  margin-top: 0.5rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+.profile-root .save-feedback.error {
+  color: #c62828;
+}
+
 
 .profile-root #pie {
   background-color: #FFE0B2;
