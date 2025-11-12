@@ -32,6 +32,8 @@ export default function Card1() {
   const correo = perfil?.correo || perfil?.email || '';
   const direccion = perfil?.direccion || perfil?.dirección || '';
   const inicial = ((nombreCompleto || correo || '').trim().charAt(0) || '?').toUpperCase();
+  const nombre = (perfil?.nombres || perfil?.nombre || '').trim();
+  const apellido = (perfil?.apellidos || perfil?.apellido || '').trim();
 
   if (loading) {
     return (
@@ -51,13 +53,17 @@ export default function Card1() {
 
   return (
     <div className="card1">
-      <div className="photo">
-        {inicial}
+      <div className="card1-header">
+        <div className="photo">{inicial}</div>
+        <div className="fullname">{nombreCompleto || '—'}</div>
       </div>
-      <div className="info">
-        <div><span className="label">Nombre Completo :</span> {nombreCompleto || '—'}</div>
-        <div><span className="label">Correo Electrónico :</span> {correo || '—'}</div>
-        <div><span className="label">Direccion :</span> {direccion || '—'}</div>
+      <div className="card1-body">
+        <h3 className="section-title">Perfil</h3>
+        <hr className="section-divider" />
+        <div className="field"><span className="label">Nombre:</span> {nombre || '—'}</div>
+        <div className="field"><span className="label">Apellido:</span> {apellido || '—'}</div>
+        <div className="field"><span className="label">Correo:</span> {correo || '—'}</div>
+        <div className="field"><span className="label">Dirección:</span> {direccion || '—'}</div>
       </div>
     </div>
   );
