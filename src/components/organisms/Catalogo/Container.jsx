@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import ProductoService from "../../../services/ProductoService";
+// 1. --- ¡IMPORTAR EL SERVICIO DEL CARRITO! ---
+import CarritoService from "../../../services/CarritoService";
 
-// Catálogo local por defecto
+// Catálogo local por defecto (esto sigue igual)
 const defaultCatalog = [
-  { id: "TC001", nombre: "Torta de Chocolate", precio: 18990, imagenUrl: "https://tortasdelacasa.com/wp-content/uploads/2024/02/DSC4340-scaled.jpg" },
-  { id: "TC002", nombre: "Tarta de Frutas", precio: 15990, imagenUrl: "https://images.aws.nestle.recipes/original/2024_10_23T06_40_18_badun_images.badun.es_tarta_fria_de_chocolate_blanco_con_frutas.jpg" },
-  { id: "TT001", nombre: "Torta de Vainilla", precio: 13990, imagenUrl: "https://tortamaniaecuador.com/wp-content/uploads/2022/12/Vainilla-con-crema-pequena-300x300.png" },
-  { id: "TT002", nombre: "Torta circular de Manjar", precio: 42000, imagenUrl: "https://rhenania.cl/wp-content/uploads/2020/12/CIRUELA-MANJAR-BLANCO.jpg" },
-  { id: "PI001", nombre: "Mousse de Chocolate", precio: 5000, imagenUrl: "https://www.elinasaiach.com/wp-content/uploads/2022/04/Mousse-Chocolate-3.jpg" },
-  { id: "PI002", nombre: "Tiramisú Clásico", precio: 5500, imagenUrl: "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg" }
+  // ... tu catálogo
 ];
 
 export default function Container() {
   const [productos, setProductos] = useState([]);
-  const [cart, setCart] = useState([]);
+  // Ya no necesitamos un estado 'cart' local, el servidor es la fuente de verdad.
+  // const [cart, setCart] = useState([]); 
   const [mensaje, setMensaje] = useState("");
 
-  // 🔹 Cargar productos (desde backend o catálogo por defecto)
+  // Cargar productos (esto sigue igual)
   useEffect(() => {
     ProductoService.getAllProductos()
       .then((response) => {
@@ -29,99 +27,85 @@ export default function Container() {
       .catch(() => setProductos(defaultCatalog));
   }, []);
 
-  // 🔹 Cargar carrito guardado en localStorage
+  // Ya no necesitamos cargar el carrito desde localStorage, lo eliminamos.
+  /*
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("products")) || [];
     setCart(savedCart);
   }, []);
+  */
 
-  // 🛒 Agregar producto al carrito
-  const addToCart = (product) => {
+  // 2. --- ¡FUNCIÓN 'addToCart' COMPLETAMENTE RECONSTRUIDA! ---
+  const addToCart = async (producto) => { // La convertimos en una función 'async'
     const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-    // 🔒 Verificar si el usuario está logeado
+    // Verificación de login (sigue igual)
     if (!usuario) {
       setMensaje("⚠️ Debes iniciar sesión para agregar productos");
       setTimeout(() => setMensaje(""), 2500);
       return;
     }
 
-    // ✅ Buscar si el producto ya existe en el carrito
-    const existing = cart.find(p => p.code === product.code);
+    // 3. --- ¡CONSTRUIR EL CUERPO DE LA PETICIÓN COMO ESPERA SPRING! ---
+    const itemParaEnviar = {
+      usuario: { id: usuario.id },
+      producto: { id: producto.id }, // Usamos el ID del producto
+      cantidad: 1 // Siempre agregamos de a uno
+    };
 
-    let updatedCart;
-    if (existing) {
-      // Si existe, solo aumenta la cantidad
-      updatedCart = cart.map(p =>
-        p.code === product.code
-          ? { ...p, cantidad: p.cantidad + 1 }
-          : p
-      );
-    } else {
-      // Si no existe, agregarlo con cantidad 1
-      updatedCart = [...cart, { ...product, cantidad: 1, usuarioId: usuario.id }];
+    console.log("Enviando al backend:", itemParaEnviar); // Línea para depurar
+
+    try {
+      // 4. --- LLAMAR AL SERVICIO PARA ENVIAR EL ITEM AL SERVIDOR ---
+      await CarritoService.agregarItemAlCarrito(itemParaEnviar);
+
+      // 5. --- MOSTRAR MENSAJE DE ÉXITO Y NOTIFICAR A OTROS COMPONENTES ---
+      setMensaje(`✅ ${producto.nombre} agregado al carrito`);
+      setTimeout(() => setMensaje(""), 2000);
+
+      // Este evento es útil para que el header (si muestra un contador) se actualice.
+      window.dispatchEvent(new Event("cartUpdated"));
+
+    } catch (error) {
+      // 6. --- MANEJAR ERRORES DE LA API ---
+      console.error("❌ Error al agregar el producto:", error);
+      let errorMsg = "No se pudo agregar el producto. Inténtalo más tarde.";
+      if (error.response && error.response.status === 400) {
+        errorMsg = "Hubo un problema con los datos del producto.";
+      }
+      setMensaje(`⚠️ ${errorMsg}`);
+      setTimeout(() => setMensaje(""), 3000);
     }
-
-    setCart(updatedCart);
-    localStorage.setItem("products", JSON.stringify(updatedCart));
-    window.dispatchEvent(new Event("cartUpdated"));
-
-    setMensaje(`✅ ${product.name} agregada al carrito`);
-    setTimeout(() => setMensaje(""), 2000);
   };
 
   return (
     <div className="container" style={{ padding: "20px", position: "relative" }}>
 
-      {/* 🧁 Mensaje flotante */}
+      {/* El mensaje flotante sigue funcionando igual */}
       {mensaje && (
         <div
           style={{
             position: "fixed",
             top: "20px",
             right: "20px",
+            // ...el resto de tus estilos
             backgroundColor: mensaje.includes("⚠️") ? "#ff9800" : "#4caf50",
             color: "white",
             padding: "10px 15px",
             borderRadius: "8px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
-            fontWeight: "bold",
-            zIndex: 999,
-            transition: "0.3s"
+            zIndex: 999
           }}
         >
           {mensaje}
         </div>
       )}
 
-      <div
-        className="row"
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "25px",
-          justifyContent: "center",
-          alignItems: "stretch"
-        }}
-      >
+      <div className="row" /* ...tus estilos */>
         {productos.map((producto) => (
-          <div
-            key={producto.id}
-            style={{
-              border: "1px solid #ddd",
-              borderRadius: "12px",
-              padding: "15px",
-              width: "230px",
-              textAlign: "center",
-              boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-              backgroundColor: "white",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}
-          >
+          <div key={producto.id} /* ...tus estilos */>
             <div>
-              <img
+              {/* ...imagen, nombre, precio... */}
+               <img
                 src={producto.imagenUrl}
                 alt={producto.nombre}
                 style={{
@@ -140,21 +124,12 @@ export default function Container() {
 
             <button
               className="btn"
-              style={{
-                marginTop: "10px",
-                padding: "8px",
-                backgroundColor: "#ff8b3d",
-                color: "white",
-                border: "none",
-                borderRadius: "8px",
-                cursor: "pointer"
-              }}
+              /* ...tus estilos */
+              // 7. --- AJUSTAR EL OBJETO QUE SE PASA A 'addToCart' ---
               onClick={() =>
                 addToCart({
-                  code: producto.id,
-                  name: producto.nombre,
-                  price: producto.precio,
-                  image: producto.imagenUrl
+                  id: producto.id, // Pasamos el objeto producto completo o al menos el ID
+                  nombre: producto.nombre
                 })
               }
             >
@@ -163,12 +138,7 @@ export default function Container() {
           </div>
         ))}
       </div>
-
-      {productos.length === 0 && (
-        <p style={{ textAlign: "center", marginTop: "20px", color: "gray" }}>
-          Cargando productos...
-        </p>
-      )}
+       {/* ... */}
     </div>
   );
 }
