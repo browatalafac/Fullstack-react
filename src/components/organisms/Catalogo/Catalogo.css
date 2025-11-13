@@ -115,6 +115,62 @@
   padding: 0 1rem;
 }
 
+.catalog-root .catalog-container {
+  padding: 20px;
+  position: relative;
+}
+
+.catalog-root .catalog-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  z-index: 999;
+}
+.catalog-root .catalog-toast.success { background-color: #4caf50; }
+.catalog-root .catalog-toast.warning { background-color: #ff9800; }
+
+.catalog-root .catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.catalog-root .catalog-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
+.catalog-root .catalog-card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+.catalog-root .catalog-card-subtitle {
+  margin: 4px 0 12px;
+  color: #555;
+}
+
+.catalog-root .catalog-card-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  justify-items: center;
+}
+
+.catalog-root .catalog-product { width: 250px; }
+.catalog-root .catalog-product-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.catalog-root .catalog-product-name { margin: 10px 0 5px; font-size: 16px; }
+.catalog-root .catalog-product-price { font-weight: bold; color: #333; }
 
 .catalog-root .row {
   display: flex;

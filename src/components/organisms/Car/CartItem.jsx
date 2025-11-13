@@ -2,19 +2,19 @@
 import React from "react";
 
 export default function CartItem({ product, removeProduct }) {
-  const { code, image, name, description, price } = product;
+  const { carritoItemId, imagenUrl, nombre, descripcion, precio } = product;
 
   return (
     <div className="cart-item">
-      <img src={image} alt={name} />
+      <img src={imagenUrl} alt={nombre} />
       <div className="item-info">
-        <h2>{name}</h2>
-        <p className="price">{price}</p>
-        <p className="desc">{description}</p>
+        <h2>{nombre}</h2>
+        <p className="price">{precio}</p>
+        <p className="desc">{descripcion}</p>
       </div>
       <div className="item-actions">
         <span className="quantity">x{product.cantidad || 1}</span>
-        <button className="remove-btn" onClick={() => removeProduct(code)}>
+        <button className="remove-btn" onClick={() => removeProduct(carritoItemId)}>
           ✖
         </button>
       </div>

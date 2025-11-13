@@ -78,65 +78,71 @@ export default function Container() {
     }
   };
 
-  return (
-    <div className="container" style={{ padding: "20px", position: "relative" }}>
+  const cardTitleOverrides = {};
+  const groupTitles = [
+    "Tortas Cuadradas",
+    "Tortas Circulares",
+    "Postres Individuales",
+    "Productos sin Azúcar",
+    "Pastelería Tradicional",
+    "Productos sin Gluten",
+    "Productos Veganos",
+    "Tortas Especiales"
+  ];
 
-      {/* El mensaje flotante sigue funcionando igual */}
+  const pares = [];
+  for (let i = 0; i < productos.length; i += 2) {
+    pares.push(productos.slice(i, i + 2));
+  }
+
+  return (
+    <div className="container catalog-container">
+
       {mensaje && (
-        <div
-          style={{
-            position: "fixed",
-            top: "20px",
-            right: "20px",
-            // ...el resto de tus estilos
-            backgroundColor: mensaje.includes("⚠️") ? "#ff9800" : "#4caf50",
-            color: "white",
-            padding: "10px 15px",
-            borderRadius: "8px",
-            zIndex: 999
-          }}
-        >
+        <div className={`catalog-toast ${mensaje.includes("⚠️") ? "warning" : "success"}`}>
           {mensaje}
         </div>
       )}
 
-      <div className="row" /* ...tus estilos */>
-        {productos.map((producto) => (
-          <div key={producto.id} /* ...tus estilos */>
-            <div>
-              {/* ...imagen, nombre, precio... */}
-               <img
-                src={producto.imagenUrl}
-                alt={producto.nombre}
-                style={{
-                  width: "100%",
-                  height: "200px",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                  marginBottom: "10px"
-                }}
-              />
-              <h4 style={{ margin: "10px 0 5px", fontSize: "16px" }}>{producto.nombre}</h4>
-              <p style={{ fontWeight: "bold", color: "#333" }}>
-                ${producto.precio.toLocaleString()} CLP
+      <div className="row catalog-grid">
+        {pares.map((par, idx) => {
+          const pairKey = (par || []).map((p) => p?.id).filter((x) => x != null).join("-") || `pair-${idx}`;
+          const titleValue = cardTitleOverrides[pairKey] ?? groupTitles[idx] ?? `Grupo ${idx + 1}`;
+          return (
+            <div key={idx} className="catalog-card">
+              <h3 className="catalog-card-title">{titleValue}</h3>
+              <p className="catalog-card-subtitle">
+                {par.map((p) => p?.nombre).filter(Boolean).join(", ")}
               </p>
-            </div>
+              <div className="catalog-card-products">
+                {par.map((producto) => (
+                  <div key={producto.id} className="catalog-product">
+                    <div>
+                      <img className="catalog-product-image" src={producto.imagenUrl} alt={producto.nombre} />
+                      <h4 className="catalog-product-name">{producto.nombre}</h4>
+                      <p className="catalog-product-price">
+                        ${producto.precio.toLocaleString()} CLP
+                      </p>
+                    </div>
 
-            <button
-              className="btn"
-              /* ...tus estilos */
-              // 7. --- AJUSTAR EL OBJETO QUE SE PASA A 'addToCart' ---
-              onClick={() =>
-                addToCart({
-                  id: producto.id, // Pasamos el objeto producto completo o al menos el ID
-                  nombre: producto.nombre
-                })
-              }
-            >
-              🛒 Agregar
-            </button>
-          </div>
-        ))}
+                    <button
+                      className="btn"
+                      /* ...tus estilos */
+                      onClick={() =>
+                        addToCart({
+                          id: producto.id,
+                          nombre: producto.nombre
+                        })
+                      }
+                    >
+                      🛒 Agregar
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
        {/* ... */}
     </div>
