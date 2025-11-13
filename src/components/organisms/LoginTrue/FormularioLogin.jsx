@@ -79,12 +79,12 @@ export default function FormularioLogin() {
         />
       </div>
 
-      <div style={{ marginTop: "1rem" }}>
+      <div className="actions">
         <button type="button" className="btn reset" onClick={handleReset}>
-          Limpiar
+          Limpiar campos
         </button>
         <button type="submit" className="btn submit">
-          Ingresar
+          Iniciar sesión
         </button>
       </div>
 

@@ -141,16 +141,16 @@ export default function Formulario() {
         />
       </div>
 
-      <div style={{ marginTop: "1rem" }}>
+      <div className="actions">
         <button
           type="reset"
           className="btn reset"
           onClick={() => setErrores("")}
         >
-          Limpiar
+          Limpiar campos
         </button>
         <button type="submit" className="btn submit">
-          Enviar
+          Crear cuenta
         </button>
       </div>
 

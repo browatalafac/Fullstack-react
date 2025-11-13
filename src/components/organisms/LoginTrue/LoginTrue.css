@@ -57,6 +57,33 @@
     margin-bottom: 3rem;
 }
 
+/* Buttons row */
+.loginTrue-root .actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons look and alignment */
+.loginTrue-root .btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #e99fac;
+  color: #5D4037;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  min-width: 160px;
+}
+.loginTrue-root .btn:hover { background: #c4806b; }
+.loginTrue-root .btn.reset { background: #f1f1f1; color: #5D4037; }
+.loginTrue-root .btn.reset:hover { background: #e4e4e4; }
+
 .loginTrue-root h1 {
     width: 100%;
     font-size: 2.5rem;

@@ -69,6 +69,33 @@
     margin-bottom: 3rem;
 }
 
+/* Buttons row */
+.login-root .actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons look and alignment */
+.login-root .btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #e99fac;
+  color: #5D4037;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  min-width: 160px;
+}
+.login-root .btn:hover { background: #c4806b; }
+.login-root .btn.reset { background: #f1f1f1; color: #5D4037; }
+.login-root .btn.reset:hover { background: #e4e4e4; }
+
 .login-root h1 {
     width: 100%;
     font-size: 2.5rem;
