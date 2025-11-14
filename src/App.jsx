@@ -10,6 +10,7 @@ import Profile from './components/pages/Profile'
 import LoginTrue from './components/pages/LoginTrue'
 import FollowPage from './components/pages/FollowPage'
 import AdminPage from './components/pages/AdminPage'
+import './axiosConfig';
 
 function App() {
   return (
