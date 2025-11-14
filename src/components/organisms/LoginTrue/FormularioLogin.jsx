@@ -34,8 +34,9 @@ export default function FormularioLogin() {
       .then((response) => {
         console.log("Usuario autenticado:", response.data);
         setMensaje("✅ Inicio de sesión exitoso");
-        // Guardar usuario en localStorage
-        localStorage.setItem("usuario", JSON.stringify(response.data));
+        // Guardar usuario en localStorage on el token
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("usuario", JSON.stringify(response.data.usuario));
 
         // Opcional: redirigir a otra página
         // window.location.href = "/catalogo";

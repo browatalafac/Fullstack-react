@@ -1,31 +1,31 @@
-import axios from "axios";
+import api from "./api";
 
-const BASE_URL = 'http://localhost:8081/api/v1/usuarios';
+const BASE_URL = '/api/v1/usuarios';
 
 class UsuarioService {
     
     getAllUsuarios() {
-        return axios.get(BASE_URL);
+        return api.get(BASE_URL);
     }
     
     getUsuarioById(id) {
-        return axios.get(`${BASE_URL}/${id}`);
+        return api.get(`${BASE_URL}/${id}`);
     }
 
     saveUsuario(usuario) {
-        return axios.post(BASE_URL, usuario);
+        return api.post(BASE_URL, usuario);
     }
    
     updateUsuario(id, usuario) {
-        return axios.put(`${BASE_URL}/${id}`, usuario);
+        return api.put(`${BASE_URL}/${id}`, usuario);
     }
    
     deleteUsuario(id) {
-        return axios.delete(`${BASE_URL}/${id}`);
+        return api.delete(`${BASE_URL}/${id}`);
     }
     
     login(usuario) {
-        return axios.post(`${BASE_URL}/login`, usuario);
+        return api.post(`${BASE_URL}/login`, usuario);
     }
 }
 
