@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.admin-root * {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+.admin-root {
+  line-height: 1.6;
+  background: #FFF5E1;
+  color: #333;
+  min-height: 100vh;
+}
+
+.admin-root .nav-left .logo {
+  height: 50px;
+  width: auto;
+  vertical-align: middle;
+}
+
+
+
+.admin-root a {
+  text-decoration: none;
+  color: #5D4037;
+  transition: color 0.3s;
+  font-size: 18px;
+}
+
+.admin-root a:hover {
+  color: #8B4513;
+}
+
+
+
+.admin-root #first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 5vw;
+  background-color: #f8c8dc;
+  border-top: 2px solid #f4a8b7;
+  border-bottom: 2px solid #f4a8b7;
+  height: 7vh;
+}
+
+.admin-root .nav-left,
+.admin-root .nav-right {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+
+.admin-root header {
+  text-align: center;
+  background: #f4a8b7;
+  padding: 2rem;
+}
+
+.admin-root header h1 {
+  margin: 0;
+  color: #5D4037;
+  font-family: "Pacifico", cursive;
+}
+
+.admin-root header p {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.admin-root main {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.admin-root section h2 {
+  color: #8B4513;
+  border-bottom: 2px solid #f4a8b7;
+  padding-bottom: 0.5rem;
+}
+
+
+
+.admin-root #pie {
+  background-color: #FFE0B2;
+  color: #5D4037;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-top: 3rem;
+  font-family: "Lato", sans-serif;
+  border-top: 2px solid #d7b48c;
+  gap: 10rem;
+}
+
+.admin-root .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.admin-root .footer-section {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.admin-root .footer-section h3 {
+  font-family: "Lato", cursive;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #8B4513;
+}
+
+.admin-root .footer-section a {
+  color: #5D4037;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.admin-root .footer-section a:hover {
+  color: #BF360C;
+}
+
+.admin-root .footer-bottom {
+  text-align: center;
+  border-top: 1px solid #d7b48c;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.admin-root #toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e99fac;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.admin-root #toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width:700px) {
+  .admin-root main {
+    grid-template-columns: 1fr;
+  }
+}

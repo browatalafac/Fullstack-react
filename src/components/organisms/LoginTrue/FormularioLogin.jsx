@@ -30,20 +30,29 @@ export default function FormularioLogin() {
     };
 
     // Llamar al backend (Spring Boot)
-    UsuarioService.login(usuarioLogin)
+     UsuarioService.login(usuarioLogin)
       .then((response) => {
-        console.log("Usuario autenticado:", response.data);
-        setMensaje("✅ Inicio de sesión exitoso");
-        // Guardar usuario en localStorage on el token
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("usuario", JSON.stringify(response.data.usuario));
+        const token = response.data.token;
+        const usuario = response.data.usuario;
 
-        // Opcional: redirigir a otra página
-        // window.location.href = "/catalogo";
+        console.log("Datos recibidos:", response.data);
+
+        // Guardar token y usuario
+        localStorage.setItem("token", token);
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+
+        setMensaje("Inicio de sesión exitoso");
+
+        //Redirigir según el rol
+        if (usuario.rol === "ADMIN") {
+          window.location.href = "/panel-admin";
+        } else {
+          window.location.href = "/";
+        }
       })
       .catch((error) => {
         console.error("Error al iniciar sesión:", error);
-        setErrores("❌ Correo o contraseña incorrectos");
+        setErrores("Correo o contraseña incorrectos");
       });
   };
 

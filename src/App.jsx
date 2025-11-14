@@ -9,6 +9,7 @@ import Cart from './components/pages/Cart'
 import Profile from './components/pages/Profile'
 import LoginTrue from './components/pages/LoginTrue'
 import FollowPage from './components/pages/FollowPage'
+import AdminPage from './components/pages/AdminPage'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='profile' element={<Profile/>}/>
         <Route path='/followUp' element={<FollowPage/>}/>
+        <Route path='/panel-admin'  element={<AdminPage/>}/>
       </Routes>
     </BrowserRouter>
   )
