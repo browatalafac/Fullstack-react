@@ -42,7 +42,7 @@ export default function First() {
             <span style={{ marginRight: "10px", fontWeight: "bold" }}>
               👤 {usuario.nombre}
             </span>
-            {usuario.rol== "ADMIN"&& (
+            {usuario.rol== "ADMIN" && ( 
               <Link
                 to="/panel-admin"
                 style={{
