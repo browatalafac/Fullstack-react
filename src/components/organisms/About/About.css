@@ -7,7 +7,11 @@
     font-size: large;
 }
 
-
+.about-root .nav-left .logo {
+    height: 50px;     
+    width: auto;       
+    vertical-align: middle;
+}
 
 .about-root a {
     text-decoration: none;
