@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProductoService from "../../../services/ProductoService.js"; // archivo de estilos que ya te hice
+import ProductoService from "../../../services/ProductoService.js"; 
 
 export default function AdminProductos() {
   const [productos, setProductos] = useState([]);

@@ -1,5 +1,5 @@
 import React from "react";
-import AdminProductos from "./AdminProductos.jsx"; // IMPORTANTE
+import AdminProductos from "./AdminProductos.jsx";
 
 export default function Second() {
   return (
