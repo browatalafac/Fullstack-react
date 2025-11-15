@@ -1,8 +1,9 @@
 import React from "react";
+import AdminProductos from "./AdminProductos.jsx"; // IMPORTANTE
 
 export default function Second() {
   return (
-    <div>
+    <div className="admin-root">
 
       {/* Barra de navegación */}
       <div id="first">
@@ -29,13 +30,13 @@ export default function Second() {
 
       {/* Contenido principal */}
       <main>
-        {/* Secciones... */}
+        <AdminProductos />
       </main>
 
       {/* Footer */}
       <footer id="pie">
         <div className="footer-content">
-          {/* ... */}
+          {/* Puedes agregar más cosas aquí si quieres */}
         </div>
 
         <div className="footer-bottom">
