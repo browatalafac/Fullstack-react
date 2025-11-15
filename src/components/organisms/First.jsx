@@ -42,6 +42,21 @@ export default function First() {
             <span style={{ marginRight: "10px", fontWeight: "bold" }}>
               👤 {usuario.nombre}
             </span>
+            {usuario.id === 1 && (
+              <Link
+                to="/panel-admin"
+                style={{
+                  marginRight: "10px",
+                  background: "#3498db",
+                  color: "white",
+                  padding: "6px 10px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                }}
+              >
+                Panel de Control
+              </Link>
+            )}
             <button
               onClick={handleLogout}
               style={{
