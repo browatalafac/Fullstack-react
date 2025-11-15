@@ -7,11 +7,7 @@
     font-size: large;
 }
 
-.about-root .nav-left .logo {
-    height: 50px;     
-    width: auto;       
-    vertical-align: middle;
-}
+
 
 .about-root a {
     text-decoration: none;
@@ -26,73 +22,6 @@
     background-color: #FFF5E1;
     color: #5D4037;
     line-height: 1.6;
-}
-
-.about-root #top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 5vw;
-    font-size: 0.9rem;
-    color: #5D4037;
-    height: 2.5vh;
-}
-
-.about-root #top-bar .social-icons a {
-    margin-left: 1rem;
-    color: #5D4037;
-    font-size: 1.2rem;
-    text-decoration: none;
-}
-
-.about-root #top-bar .social-icons a:hover {
-    color: #8B4513;
-}
-
-.about-root #first {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5vw;
-    background-color: #f8c8dc;
-    height: 2vh;
-    border-top: 2px solid #f4a8b7;
-    border-bottom: 2px solid #f4a8b7;
-}
-
-.about-root .nav-left, 
-.about-root .nav-right {
-    display: flex;
-    align-items: center;
-    column-gap: 2rem;
-}
-
-.about-root #search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.about-root #search-bar input {
-    padding: 0.3rem 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-
-.about-root #search-bar button {
-    margin-left: 0.3rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    border: none;
-    background-color: #e99fac;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease, transform 0.2s;
-}
-
-.about-root #search-bar button:hover {
-    background-color: #c4806b;
-    transform: scale(1.05);
 }
 
 .about-root #second {
@@ -128,56 +57,6 @@
 .about-root .img-vision {
     max-width: 200px;
     height: auto;
-}
-
-.about-root #pie {
-    background-color: #FFE0B2;
-    color: #5D4037;
-    padding: 2rem 1rem 1rem 1rem;
-    margin-top: 3rem;
-    font-family: "Lato", sans-serif;
-    border-top: 2px solid #d7b48c;
-    gap: 10rem;
-}
-
-.about-root .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-    padding-bottom: 1rem;
-}
-
-.about-root .footer-section {
-    flex: 1 1 250px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
-}
-
-.about-root .footer-section h3 {
-    font-family: "Lato", cursive;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: #8B4513;
-}
-
-.about-root .footer-section a {
-    color: #5D4037;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.about-root .footer-section a:hover {
-    color: #BF360C;
-}
-
-.about-root .footer-bottom {
-    text-align: center;
-    border-top: 1px solid #d7b48c;
-    padding-top: 1rem;
-    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {

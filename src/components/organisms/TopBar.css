@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+#top-bar {
+  background-color: #FFF5E1;
+  color: #5D4037;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 4vw;
+}
+
+#top-bar p {
+  font-size: large;
+}
+
+#top-bar .social-icons a {
+  color: #5D4037;
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+#top-bar .social-icons a:hover {
+  color: #BF360C;
+}
+
+@media (max-width: 375px) {
+  #top-bar {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+}

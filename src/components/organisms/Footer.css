@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+#pie {
+  background-color: #FFE0B2;
+  color: #5D4037;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-top: 3rem;
+  border-top: 2px solid #d7b48c;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  min-width: 180px;
+}
+
+.footer-section h3 {
+  font-family: "Lato", cursive;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #8B4513;
+}
+
+.footer-section a {
+  color: #5D4037;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #BF360C;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #d7b48c;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 500px) {
+  .footer-section {
+    width: 100%;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}

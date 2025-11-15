@@ -20,18 +20,6 @@
   width: auto;
   vertical-align: middle;
 }
-
-.blogs-root #top-bar .social-icons a {
-  color: #5D4037;
-  margin-left: 1rem;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-}
-
-.blogs-root #top-bar .social-icons a:hover {
-  color: #BF360C;
-}
-
 .blogs-root a {
   text-decoration: none;
   color: #5D4037;
@@ -41,63 +29,6 @@
 
 .blogs-root a:hover {
   color: #8B4513;
-}
-
-.blogs-root #top-bar {
-  background-color: #FFF5E1;
-  color: #5D4037;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.3rem 5vw;
-  font-size: 1rem;
-}
-
-.blogs-root #first {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 5vw;
-  background-color: #f8c8dc;
-  border-top: 2px solid #f4a8b7;
-  border-bottom: 2px solid #f4a8b7;
-  height: 7vh;
-}
-
-.blogs-root .nav-left,
-.blogs-root .nav-right {
-  display: flex;
-  align-items: center;
-  column-gap: 2rem;
-}
-
-.blogs-root #search-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.blogs-root #search-bar input {
-  padding: 0.5rem 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-
-.blogs-root #search-bar button {
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
-  border: none;
-  background-color: #e99fac;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease, transform 0.2s;
-  font-size: 1rem;
-}
-
-.blogs-root #search-bar button:hover {
-  background: #c4806b;
-  transform: scale(1.05);
 }
 
 .blogs-root #cart {
@@ -173,56 +104,6 @@
 .blogs-root article a:hover {
   background: #c4806b;
   transform: scale(1.05);
-}
-
-.blogs-root #pie {
-    background-color: #FFE0B2;
-    color: #5D4037;
-    padding: 2rem 1rem 1rem 1rem;
-    margin-top: 3rem;
-    font-family: "Lato", sans-serif;
-    border-top: 2px solid #d7b48c;
-    gap: 10rem;
-}
-
-.blogs-root .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-    padding-bottom: 1rem;
-}
-
-.blogs-root .footer-section {
-    flex: 1 1 250px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
-}
-
-.blogs-root .footer-section h3 {
-    font-family: "Lato", cursive;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: #8B4513;
-}
-
-.blogs-root .footer-section a {
-    color: #5D4037;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.blogs-root .footer-section a:hover {
-    color: #BF360C;
-}
-
-.blogs-root .footer-bottom {
-    text-align: center;
-    border-top: 1px solid #d7b48c;
-    padding-top: 1rem;
-    font-size: 0.9rem;
 }
 
 .blogs-root #toast {

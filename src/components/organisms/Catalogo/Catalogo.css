@@ -28,70 +28,12 @@
 }
 .catalog-root a:hover { color: #8B4513; }
 
-
-.catalog-root #top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 4vw; 
-  font-size: 0.9rem;
-  color: #5D4037;
-  height: auto;
-}
-
-.catalog-root #top-bar .social-icons a {
-  margin-left: 1rem;
-  color: #5D4037;
-  font-size: 1.2rem;
-}
-.catalog-root #top-bar .social-icons a:hover { color: #8B4513; }
-
-
-.catalog-root #first {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 4vw;
-  background-color: #f8c8dc;
-  border-top: 2px solid #f4a8b7;
-  border-bottom: 2px solid #f4a8b7;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
 .catalog-root .nav-left,
 .catalog-root .nav-right {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
-.catalog-root #search-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.catalog-root #search-bar input {
-  padding: 0.3rem 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-  width: 200px;
-  max-width: 40vw;
-}
-
-.catalog-root #search-bar button {
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
-  border: none;
-  background-color: #e99fac;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease, transform 0.2s;
-}
-.catalog-root #search-bar button:hover { background-color: #c4806b; transform: scale(1.03); }
-
 
 .catalog-root header {
   margin-top: 0;
@@ -263,33 +205,6 @@
   transition: all 0.3s ease;
 }
 .catalog-root .btn:hover { background: #c4806b; transform: scale(1.03); }
-
-.catalog-root #pie {
-  background-color: #FFE0B2;
-  color: #5D4037;
-  padding: 2rem 1rem 1rem 1rem;
-  margin-top: 3rem;
-  border-top: 2px solid #d7b48c;
-  gap: 10rem;
-}
-.catalog-root .footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem;
-  padding-bottom: 1rem;
-}
-.catalog-root .footer-section {
-  flex: 1 1 250px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
-  min-width: 180px;
-}
-.catalog-root .footer-section h3 { font-family: "Lato", cursive; font-size: 1.4rem; margin-bottom: 0.5rem; color: #8B4513; }
-.catalog-root .footer-section a { color: #5D4037; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-.catalog-root .footer-section a:hover { color: #BF360C; }
-.catalog-root .footer-bottom { text-align: center; border-top: 1px solid #d7b48c; padding-top: 1rem; font-size: 0.9rem; }
 
 .catalog-root #toast {
   position: fixed;
