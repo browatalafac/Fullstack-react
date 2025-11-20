@@ -8,7 +8,6 @@ export default function Second() {
       {/* Barra de navegación */}
       <div id="first">
         <div className="nav-left">
-         
           <h2>Panel de Administración</h2>
         </div>
 
