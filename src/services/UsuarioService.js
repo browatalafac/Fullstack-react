@@ -1,6 +1,6 @@
 import api from "./api";
 
-const BASE_URL = '/api/v1/usuarios';
+const BASE_URL = 'http://100.28.128.138:8081/api/v1/usuarios';
 
 class UsuarioService {
     
