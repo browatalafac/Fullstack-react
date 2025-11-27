@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'http://100.28.128.138:8081/api/v1/compras';
+const BASE_URL = 'http://localhost:8081/api/v1/compras';
 
 class CompraService{
     getAllCompras(){

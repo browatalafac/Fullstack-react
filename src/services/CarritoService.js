@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'http://100.28.128.138:8081/api/v1/carrito';
+const BASE_URL = 'http://localhost:8081/api/v1/carrito';
 
 // Función para obtener el token rápidamente
 const authHeader = () => {

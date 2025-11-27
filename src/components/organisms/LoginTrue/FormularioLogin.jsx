@@ -40,6 +40,7 @@ export default function FormularioLogin() {
         // Guardar token y usuario
         localStorage.setItem("token", token);
         localStorage.setItem("usuario", JSON.stringify(usuario));
+        localStorage.setItem("role", usuario.rol); // Guardar el rol del usuario
 
         setMensaje("Inicio de sesión exitoso");
 
