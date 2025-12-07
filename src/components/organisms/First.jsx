@@ -6,12 +6,12 @@ export default function First() {
   const navigate = useNavigate();
   const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-  // 🔹 Cerrar sesión
+  //Cerrar sesión
   const handleLogout = () => {
     localStorage.removeItem("usuario");
-    localStorage.removeItem("products"); // opcional: limpiar carrito al salir
+    localStorage.removeItem("products"); //limpiar carrito al salir
     alert("👋 Sesión cerrada correctamente");
-    navigate("/loginTrue"); // redirige al login o a donde prefieras
+    navigate("/loginTrue"); // redirige al login
   };
 
   return (
@@ -31,7 +31,7 @@ export default function First() {
       <div className="nav-right">
         <Link to="/profile">Perfil</Link>
 
-        {/* 🔒 Mostrar botones según sesión */}
+        {/*Mostrar botones según la sesión, admin o usuario */}
         {!usuario ? (
           <>
             <Link to="/loginTrue">Iniciar sesión</Link>

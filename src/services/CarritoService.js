@@ -15,22 +15,22 @@ const authHeader = () => {
 
 class CarritoService {
 
-  // 🟢 GET /carrito/{usuarioId}
+
   getCarritoByUsuarioId(usuarioId) {
     return axios.get(`${BASE_URL}/${usuarioId}`, authHeader());
   }
 
-  // 🟢 POST /carrito
+
   agregarItemAlCarrito(item) {
     return axios.post(BASE_URL, item, authHeader());
   }
 
-  // 🟢 DELETE /carrito/{itemId}
+
   eliminarItemDelCarrito(itemId) {
     return axios.delete(`${BASE_URL}/${itemId}`, authHeader());
   }
 
-  // 🟢 DELETE /carrito/usuario/{usuarioId}
+
   limpiarCarrito(usuarioId) {
     return axios.delete(`${BASE_URL}/usuario/${usuarioId}`, authHeader());
   }

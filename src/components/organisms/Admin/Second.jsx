@@ -17,7 +17,7 @@ export default function Second() {
         </div>
       </div>
 
-      {/* Header bonito */}
+      {/* Header*/}
       <header>
         <h1>Bienvenido Administrador 🎂</h1>
         <p>Gestiona tus productos, usuarios y pedidos</p>
@@ -31,7 +31,7 @@ export default function Second() {
       {/* Footer */}
       <footer id="pie">
         <div className="footer-content">
-          {/* Puedes agregar más cosas aquí si quieres */}
+          {/* Despues se pueden agregar mas cosas, tal vez */}
         </div>
 
         <div className="footer-bottom">

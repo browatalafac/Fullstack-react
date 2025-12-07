@@ -29,7 +29,7 @@ export default function FormularioLogin() {
       contrasena: clave
     };
 
-    // Llamar al backend (Spring Boot)
+    // Llamar al backend
      UsuarioService.login(usuarioLogin)
       .then((response) => {
         const token = response.data.token;

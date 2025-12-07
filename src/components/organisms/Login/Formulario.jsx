@@ -14,7 +14,7 @@ export default function Formulario() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 🔹 Validaciones
+    //Validaciones
     if (nombre.length < 3) {
       setErrores("Ingrese mínimo 3 letras en el nombre.");
       return;
@@ -42,7 +42,7 @@ export default function Formulario() {
 
     setErrores("");
 
-    // 🔹 Crear objeto igual al modelo del backend (nombre y apellido separados)
+    //Crear objeto igual al modelo del backend (nombre y apellido separados)
     const nuevoUsuario = {
       nombre: nombre,
       apellido: apellidos,
@@ -51,7 +51,7 @@ export default function Formulario() {
       direccion: direccion
     };
 
-    // 🔹 Llamar al backend (Spring Boot)
+    //Llamar al backend 
     UsuarioService.saveUsuario(nuevoUsuario)
       .then((response) => {
         console.log("Usuario creado:", response.data);
