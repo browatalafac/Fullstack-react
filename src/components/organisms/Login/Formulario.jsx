@@ -40,13 +40,8 @@ export default function Formulario() {
       return;
     }
 
-    if (clave1.length < 7) {
+    if (clave1.length < 8) {
       setErrores("La contraseña debe tener al menos 8 caracteres.");
-      return;
-    }
-
-    if(!email.includes(".com")) {
-      setErrores("El correo debe contener '.com'.");
       return;
     }
 
@@ -82,7 +77,8 @@ export default function Formulario() {
   };
 
   return (
-    <form id="formulario" onSubmit={handleSubmit}>
+    
+    <form id="formulario" onSubmit={handleSubmit} noValidate>
       <h1>Crear una cuenta</h1>
 
       <div className="row">

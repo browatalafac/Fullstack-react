@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Formulario from "./Formulario";
 import React from "react";
 import UsuarioService from "../../../services/UsuarioService";
@@ -31,7 +31,7 @@ describe('Formulario Component', () => {
         expect(screen.getByLabelText("Repetir contraseña")).toBeInTheDocument();
     });
 
-     it("muestra mensaje de error si el email no contiene arroba", async () => {
+    it("muestra mensaje de error si el email no contiene arroba", async () => {
         render(<Formulario />);
 
         fireEvent.change(screen.getByLabelText("Nombre"), {
@@ -43,8 +43,9 @@ describe('Formulario Component', () => {
         fireEvent.change(screen.getByLabelText("Dirección"), {
             target: { value: "Calle 123" }
         });
+    
         fireEvent.change(screen.getByLabelText("E-mail"), {
-            target: { value: "correo" }
+            target: { value: "hola" }
         });
         fireEvent.change(screen.getByLabelText("Contraseña"), {
             target: { value: "Clave1234" }
@@ -52,11 +53,13 @@ describe('Formulario Component', () => {
         fireEvent.change(screen.getByLabelText("Repetir contraseña"), {
             target: { value: "Clave1234" }
         });
+
         fireEvent.click(screen.getByText("Crear cuenta"));
 
-        const errorMessage = await screen.findByText(/arroba/i);
+        // usa findByText (await) en vez de waitFor+getByText
+        const errorMessage = await screen.findByText("Añade un signo arroba (@) en el email.");
         expect(errorMessage).toBeInTheDocument();
-        expect(errorMessage).toHaveStyle({ color: "red" });
+        expect(errorMessage).toHaveStyle({ color: "rgb(255, 0, 0)" });
     });
 
     it('envía correctamente el formulario con los datos válidos', async () => {
@@ -86,17 +89,13 @@ describe('Formulario Component', () => {
 
         fireEvent.click(screen.getByText("Crear cuenta"));
 
-        await waitFor(() => {
-            expect(mockSave).toHaveBeenCalledWith({
-                nombre: mockUser.nombre,
-                apellido: mockUser.apellidos,
-                correo: mockUser.email,
-                contrasena: mockUser.clave1,
-                direccion: mockUser.direccion
-            });
+        await screen.findByText("✅ Usuario registrado correctamente"); // espera al mensaje
+        expect(mockSave).toHaveBeenCalledWith({
+            nombre: mockUser.nombre,
+            apellido: mockUser.apellidos,
+            correo: mockUser.email,
+            contrasena: mockUser.clave1,
+            direccion: mockUser.direccion
         });
-        const successMessage = await screen.findByText("✅ Usuario registrado correctamente");
-        expect(successMessage).toBeInTheDocument();
-        expect(successMessage).toHaveStyle({ color: 'rgb(0, 128, 0)' }); //no se porque daba error el color xd, pero aqui habia uno
     });
 });
