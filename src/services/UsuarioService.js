@@ -1,6 +1,6 @@
 import api from "./api";
 
-const USUARIOS_ENDPOINT = 'usuarios';
+const USUARIOS_ENDPOINT = '/usuarios';
 
 class UsuarioService {
     

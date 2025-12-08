@@ -13,7 +13,6 @@ export default function Second() {
 
         <div className="nav-right">
           <a href="/">Volver a la página principal</a>
-          <a href="/">Cerrar sesión</a>
         </div>
       </div>
 
