@@ -1,49 +1,59 @@
-import { fireEvent, render, screen } from "@testing-library/react"
-import Container from "./Container"
-import React from "react"
+import { render, screen, fireEvent } from "@testing-library/react";
+import Container from "./Container";
+import React from "react";
 
-describe('Container Component', () => {
-    const mockProducts = [
-        { code: "1", name: "Torta Cuadrada de Chocolate", price: "45000" },
-        { code: "2", name: "Torta Cuadrada de Frutas", price: "50000" }
-    ]
+// Mock ProductoService
+jest.mock("../../../services/ProductoService", () => ({
+  getAllProductos: jest.fn()
+}));
 
-    Storage.prototype.getItem = jest.fn(() => JSON.stringify(mockProducts))
-    Storage.prototype.setItem = jest.fn()
+// Mock CarritoService (para evitar llamadas reales)
+jest.mock("../../../services/CarritoService", () => ({
+  agregarItemAlCarrito: jest.fn(() => Promise.resolve())
+}));
 
-    it('renderiza correctamente las categorías principales', () => {
-        render(<Container />)
+import ProductoService from "../../../services/ProductoService";
+import CarritoService from "../../../services/CarritoService";
 
-        expect(screen.getByText("Tortas Cuadradas")).toBeInTheDocument()
-        expect(screen.getByText("Tortas Circulares")).toBeInTheDocument()
-        expect(screen.getByText("Postres Individuales")).toBeInTheDocument()
-        expect(screen.getByText("Productos Sin Azúcar")).toBeInTheDocument()
-        expect(screen.getByText("Pastelería Tradicional")).toBeInTheDocument()
-        expect(screen.getByText("Productos Sin Gluten")).toBeInTheDocument()
-        expect(screen.getByText("Productos Veganos")).toBeInTheDocument()
-        expect(screen.getByText("Tortas Especiales")).toBeInTheDocument()
-    })
+describe("Container Component", () => {
+  beforeEach(() => {
+    // Mock productos del backend
+    ProductoService.getAllProductos.mockResolvedValue({
+      data: [
+        { id: 1, nombre: "Torta Cuadrada de Chocolate", precio: 45000, imagenUrl: "" },
+        { id: 2, nombre: "Torta Cuadrada de Frutas", precio: 50000, imagenUrl: "" }
+      ]
+    });
 
-    it('carga correctamente el carrito guardado desde localStorage', () => {
-        render(<Container />)
-        expect(localStorage.getItem).toHaveBeenCalledWith("products")
-        expect(screen.getByText("Torta Cuadrada de Chocolate")).toBeInTheDocument()
-    })
+    // Simula usuario logueado
+    Storage.prototype.getItem = jest.fn(() => JSON.stringify({ id: 99 }));
+  });
 
-    it('agrega un producto al carrito al hacer clic en "Agregar al carrito"', () => {
-        render(<Container />)
+  it("renderiza categorías correctamente", async () => {
+    render(<Container />);
 
-        const botonAgregar = screen.getAllByText("Agregar al carrito")[0]
-        fireEvent.click(botonAgregar)
+    expect(await screen.findByText("Tortas Cuadradas")).toBeInTheDocument();
+  });
 
-        expect(localStorage.setItem).toHaveBeenCalled()
-        const llamada = localStorage.setItem.mock.calls[0]
-        expect(llamada[0]).toBe("products")
+  it("renderiza productos del backend", async () => {
+    render(<Container />);
 
-        const productosGuardados = JSON.parse(llamada[1])
-        expect(productosGuardados.length).toBeGreaterThan(0)
-        expect(productosGuardados[0].name).toBe("Torta Cuadrada de Chocolate")
-    })
-})
+    expect(await screen.findByText("Torta Cuadrada de Chocolate")).toBeInTheDocument();
+    expect(screen.getByText("Torta Cuadrada de Frutas")).toBeInTheDocument();
+  });
 
+  it("llama al backend al agregar un producto", async () => {
+    render(<Container />);
+
+    const botones = await screen.findAllByText("🛒 Agregar");
+
+    fireEvent.click(botones[0]);
+
+    expect(CarritoService.agregarItemAlCarrito).toHaveBeenCalledWith({
+      usuario: { id: 99 },
+      producto: { id: 1 },
+      cantidad: 1
+    });
+  });
+});
 //3 tests realizados. uno pa verificar que las categorías principales se renderizan correctamente, otro para asegurar que el carrito se carga desde localStorage y un tercero para comprobar que al agregar un producto
