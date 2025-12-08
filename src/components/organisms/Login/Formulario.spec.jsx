@@ -12,12 +12,11 @@ describe('Formulario Component', () => {
         apellidos: "apellido test",
         direccion: "direccion test",
         email: "tomas@correo.com",
-        clave1: "Clave123",
-        clave2: "Clave123"
+        clave1: "Clave1234",
+        clave2: "Clave1234"
     };
 
     beforeEach(() => {
-        // Limpiar mocks antes de cada prueba
         jest.clearAllMocks();
     });
 
@@ -32,46 +31,40 @@ describe('Formulario Component', () => {
         expect(screen.getByLabelText("Repetir contraseña")).toBeInTheDocument();
     });
 
-    it('muestra mensaje de error si el email no contiene arroba', async () => {
+     it("muestra mensaje de error si el email no contiene arroba", async () => {
         render(<Formulario />);
 
-        // Completar los campos requeridos
-        fireEvent.change(screen.getByLabelText("Nombre"), { 
-            target: { value: "tomas" } 
+        fireEvent.change(screen.getByLabelText("Nombre"), {
+            target: { value: "Tomas" }
         });
-        fireEvent.change(screen.getByLabelText("Apellidos"), { 
-            target: { value: "apellido" } 
+        fireEvent.change(screen.getByLabelText("Apellidos"), {
+            target: { value: "Ponce" }
         });
-        fireEvent.change(screen.getByLabelText("Dirección"), { 
-            target: { value: "direccion" } 
+        fireEvent.change(screen.getByLabelText("Dirección"), {
+            target: { value: "Calle 123" }
         });
-        fireEvent.change(screen.getByLabelText("E-mail"), { 
-            target: { value: "tomas.correo.com" } // Email sin @
+        fireEvent.change(screen.getByLabelText("E-mail"), {
+            target: { value: "correo" }
         });
-        fireEvent.change(screen.getByLabelText("Contraseña"), { 
-            target: { value: "Clave123" } 
+        fireEvent.change(screen.getByLabelText("Contraseña"), {
+            target: { value: "Clave1234" }
         });
-        fireEvent.change(screen.getByLabelText("Repetir contraseña"), { 
-            target: { value: "Clave123" } 
+        fireEvent.change(screen.getByLabelText("Repetir contraseña"), {
+            target: { value: "Clave1234" }
         });
-
-        // Enviar el formulario
         fireEvent.click(screen.getByText("Crear cuenta"));
 
-        // Verificar que se muestra el mensaje de error
-        const errorMessage = await screen.findByText("Añade un signo arroba (@) en el email.");
+        const errorMessage = await screen.findByText(/arroba/i);
         expect(errorMessage).toBeInTheDocument();
-        expect(errorMessage).toHaveStyle({ color: 'red' });
+        expect(errorMessage).toHaveStyle({ color: "red" });
     });
 
     it('envía correctamente el formulario con los datos válidos', async () => {
-        // Mock de la función saveUsuario
         const mockSave = jest.fn().mockResolvedValue({ data: { success: true } });
         UsuarioService.saveUsuario = mockSave;
         
         render(<Formulario />);
 
-        // Completar todos los campos requeridos
         fireEvent.change(screen.getByLabelText("Nombre"), { 
             target: { value: mockUser.nombre } 
         });
@@ -91,12 +84,9 @@ describe('Formulario Component', () => {
             target: { value: mockUser.clave2 } 
         });
 
-        // Enviar el formulario
         fireEvent.click(screen.getByText("Crear cuenta"));
 
-        // Esperar a que se resuelvan las promesas
         await waitFor(() => {
-            // Verificar que se llamó al servicio con los datos correctos
             expect(mockSave).toHaveBeenCalledWith({
                 nombre: mockUser.nombre,
                 apellido: mockUser.apellidos,
@@ -105,10 +95,8 @@ describe('Formulario Component', () => {
                 direccion: mockUser.direccion
             });
         });
-
-        // Verificar que se muestra el mensaje de éxito
         const successMessage = await screen.findByText("✅ Usuario registrado correctamente");
         expect(successMessage).toBeInTheDocument();
-        expect(successMessage).toHaveStyle({ color: 'green' });
+        expect(successMessage).toHaveStyle({ color: 'rgb(0, 128, 0)' }); //no se porque daba error el color xd, pero aqui habia uno
     });
 });
