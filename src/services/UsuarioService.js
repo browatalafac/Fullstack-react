@@ -1,31 +1,31 @@
 import api from "./api";
 
-const BASE_URL = 'http://localhost:8081/api/v1/usuarios';
+const USUARIOS_ENDPOINT = 'usuarios';
 
 class UsuarioService {
     
     getAllUsuarios() {
-        return api.get(BASE_URL);
+        return api.get(USUARIOS_ENDPOINT);
     }
     
     getUsuarioById(id) {
-        return api.get(`${BASE_URL}/${id}`);
+        return api.get(`${USUARIOS_ENDPOINT}/${id}`);
     }
 
     saveUsuario(usuario) {
-        return api.post(BASE_URL, usuario);
+        return api.post(USUARIOS_ENDPOINT, usuario);
     }
    
     updateUsuario(id, usuario) {
-        return api.put(`${BASE_URL}/${id}`, usuario);
+        return api.put(`${USUARIOS_ENDPOINT}/${id}`, usuario);
     }
    
     deleteUsuario(id) {
-        return api.delete(`${BASE_URL}/${id}`);
+        return api.delete(`${USUARIOS_ENDPOINT}/${id}`);
     }
     
     login(usuario) {
-        return api.post(`${BASE_URL}/login`, usuario);
+        return api.post(`${USUARIOS_ENDPOINT}/login`, usuario);
     }
 }
 

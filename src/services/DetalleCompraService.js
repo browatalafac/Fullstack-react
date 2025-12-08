@@ -1,13 +1,13 @@
-import axios from "axios";
-const BASE_URL = 'http://localhost:8081/api/v1/productos';
+import api from "./api";
+const DETALLE_COMPRA_ENDPOINT = '/detalle-compra';
 
 class DetalleCompraService{
     getAllDetalleCompra(){
-        return axios.get(BASE_URL);
+        return api.get(DETALLE_COMPRA_ENDPOINT);
     }
 
     getDetalleCompraById(id){
-        return axios.get(`${BASE_URL}/${id}`);
+        return api.get(`${DETALLE_COMPRA_ENDPOINT}/${id}`);
     }
 
 }

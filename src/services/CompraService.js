@@ -1,25 +1,25 @@
-import axios from "axios";
-const BASE_URL = 'http://localhost:8081/api/v1/compras';
+import api from "./api";
+const COMPRA_ENDPOINT = '/compras';
 
 class CompraService{
     getAllCompras(){
-        return axios.get(BASE_URL);
+        return api.get(COMPRA_ENDPOINT);
     }
 
     getCompraById(id){
-        return axios.get(`${BASE_URL}/${id}`);
+        return api.get(`${COMPRA_ENDPOINT}/${id}`);
     }
 
-      saveCompra(compra) {
-    return axios.post(BASE_URL, compra);
+    saveCompra(compra) {
+        return api.post(COMPRA_ENDPOINT, compra);
   }
 
     updateCompra(id,compra){
-        return axios.put(`${BASE_URL}/${id}`);
+        return api.put(`${COMPRA_ENDPOINT}/${id}`, compra);
     }
 
      deleteCompra(id){
-        return axios.delete(`${BASE_URL}/${id}`);
+        return api.delete(`${COMPRA_ENDPOINT}/${id}`);
     }
 
 

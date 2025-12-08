@@ -1,32 +1,34 @@
-import axios from "axios";
+import api from "./api"; 
 
-const BASE_URL = 'http://localhost:8081/api/v1/productos';
+
+const PRODUCTOS_ENDPOINT = '/productos'; 
 
 class ProductoService {
 
 
   getAllProductos() {
-    return axios.get(BASE_URL);
+    
+    return api.get(PRODUCTOS_ENDPOINT); 
   }
 
 
   getProductoById(id) {
-    return axios.get(`${BASE_URL}/${id}`);
+    return api.get(`${PRODUCTOS_ENDPOINT}/${id}`);
   }
 
 
   saveProducto(producto) {
-    return axios.post(BASE_URL, producto);
+    return api.post(PRODUCTOS_ENDPOINT, producto);
   }
 
 
   updateProducto(id, producto) {
-    return axios.put(`${BASE_URL}/${id}`, producto);
+    return api.put(`${PRODUCTOS_ENDPOINT}/${id}`, producto);
   }
 
 
   deleteProducto(id) {
-    return axios.delete(`${BASE_URL}/${id}`);
+    return api.delete(`${PRODUCTOS_ENDPOINT}/${id}`);
   }
 }
 

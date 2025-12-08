@@ -1,6 +1,5 @@
-import axios from "axios";
-
-const BASE_URL = 'http://localhost:8081/api/v1/carrito';
+import api from "./api";
+const CARRITO_ENDPOINT = '/carrito';
 
 // Función para obtener el token rápidamente
 const authHeader = () => {
@@ -17,22 +16,22 @@ class CarritoService {
 
 
   getCarritoByUsuarioId(usuarioId) {
-    return axios.get(`${BASE_URL}/${usuarioId}`, authHeader());
+    return api.get(`${CARRITO_ENDPOINT}/${usuarioId}`, authHeader());
   }
 
 
   agregarItemAlCarrito(item) {
-    return axios.post(BASE_URL, item, authHeader());
+    return api.post(CARRITO_ENDPOINT, item, authHeader());
   }
 
 
   eliminarItemDelCarrito(itemId) {
-    return axios.delete(`${BASE_URL}/${itemId}`, authHeader());
+    return api.delete(`${CARRITO_ENDPOINT}/${itemId}`, authHeader());
   }
 
 
   limpiarCarrito(usuarioId) {
-    return axios.delete(`${BASE_URL}/usuario/${usuarioId}`, authHeader());
+    return api.delete(`${CARRITO_ENDPOINT}/usuario/${usuarioId}`, authHeader());
   }
 
 }
