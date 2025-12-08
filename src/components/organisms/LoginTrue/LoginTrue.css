@@ -1,3 +1,8 @@
+body, html {
+    overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal */
+    width: 100%;       /* Asegura que el contenedor principal use el 100% disponible */
+}
+
 .loginTrue-root * {
     margin: 0;
     font-family: "Lato", sans-serif;
@@ -57,7 +62,7 @@
     margin-bottom: 3rem;
 }
 
-/* Buttons row */
+
 .loginTrue-root .actions {
   width: 100%;
   display: flex;
@@ -68,7 +73,7 @@
   flex-wrap: wrap;
 }
 
-/* Buttons look and alignment */
+
 .loginTrue-root .btn {
   padding: 0.6rem 1.2rem;
   border: none;
@@ -224,7 +229,17 @@
     text-decoration: underline;
     }
 
-@media (max-width: 768px) {
+@media (max-width: 443px) {
+    
+
+    .loginTrue-root #first nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        width: 80%;
+    }
+
     .loginTrue-root form {
         width: 90vw;
         padding: 1.5rem;
@@ -237,4 +252,15 @@
     .loginTrue-root button.btn {
         width: 100%;
     }
+
+    .loginTrue-root .you-dont-have {
+    margin-top: -1.8rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #5D4037;
+    font-weight: 500;
+
+    }
 }
+
+

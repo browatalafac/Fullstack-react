@@ -40,6 +40,16 @@ export default function Formulario() {
       return;
     }
 
+    if (clave1.length < 7) {
+      setErrores("La contraseña debe tener al menos 8 caracteres.");
+      return;
+    }
+
+    if(!email.includes(".com")) {
+      setErrores("El correo debe contener '.com'.");
+      return;
+    }
+
     setErrores("");
 
     //Crear objeto igual al modelo del backend (nombre y apellido separados)

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ProductoService from "../../../services/ProductoService";
-// 1. --- ¡IMPORTAR EL SERVICIO DEL CARRITO! ---
 import CarritoService from "../../../services/CarritoService";
 
 // Catálogo local por defecto que ahora, ya no se usa, ya que se usa el backend.
@@ -10,8 +9,6 @@ const defaultCatalog = [
 
 export default function Container() {
   const [productos, setProductos] = useState([]);
-  // Ya no necesitamos un estado 'cart' local, el servidor es la fuente de verdad, osea el backend.
-  // const [cart, setCart] = useState([]); 
   const [mensaje, setMensaje] = useState("");
 
   // Cargar productos
@@ -28,10 +25,10 @@ export default function Container() {
   }, []);
 
 
-  const addToCart = async (producto) => { // La convertimos en una función 'async'
+  const addToCart = async (producto) => { // La convertimos en una función async
     const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-    // Verificación de login (sigue igual)
+    // Verificación de login
     if (!usuario) {
       setMensaje("⚠️ Debes iniciar sesión para agregar productos");
       setTimeout(() => setMensaje(""), 2500);

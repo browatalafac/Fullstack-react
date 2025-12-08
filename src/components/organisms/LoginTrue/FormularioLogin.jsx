@@ -10,16 +10,16 @@ export default function FormularioLogin() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validaciones básicas
-    if (!email.includes("@")) {
-      setErrores("El correo debe contener un signo arroba (@).");
-      return;
-    }
-
+    // Validacione basicas para el login
     if (clave.trim() === "") {
       setErrores("Ingrese su contraseña.");
       return;
     }
+
+     if (email.trim() === "") {
+      setErrores("Ingrese su correo.");
+      return;
+  }
 
     setErrores("");
 
@@ -29,7 +29,6 @@ export default function FormularioLogin() {
       contrasena: clave
     };
 
-    // Llamar al backend
      UsuarioService.login(usuarioLogin)
       .then((response) => {
         const token = response.data.token;
